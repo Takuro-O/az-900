@@ -1,0 +1,706 @@
+{
+ "field": "arch",
+ "updatedAt": "2026-11-08",
+ "questions": [
+  {
+   "q": "ある企業において、特定のプロジェクトチームに対して Azure の仮想ネットワークの管理権限のみを付与し、仮想マシンの削除やストレージのアカウント操作は実行できないように設定したいと考えています。適切なアクセス制御を実現するために適用すべき概念として、最も適切なものはどれか。",
+   "choices": [
+    "リソースロックの削除不可 (CanNotDelete) 設定",
+    "Azure Policy によるアクセス制限",
+    "Azure ロールベースのアクセス制御 (Azure RBAC)",
+    "Microsoft Entra ID の条件付きアクセス"
+   ],
+   "answer": 2,
+   "explanation": "Azure RBAC は、リソースに対する細粒度なアクセス管理を実現する機能です。特定の役割（ロール）に必要なアクション許可のみを定義して割り振ることで、最小権限の原則に基づくアクセス制御を実行できます。",
+   "topic": "RBAC",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "ユーザーのログイン要求に対して、アクセス元の IP アドレスや使用デバイスのコンプライアンス状態などのシグナルを評価し、追加の多要素認証 (MFA) を要求するかどうかを自動的に判断するセキュリティ管理機能はどれか。",
+   "choices": [
+    "Azure Key Vault",
+    "ネットワークセキュリティグループ (NSG)",
+    "Azure RBAC",
+    "条件付きアクセス"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Entra ID の条件付きアクセスは、ユーザー、場所、デバイス、アプリなどのシグナルを分析し、アクセス許可、ブロック、または MFA の要求などの組織ポリシーを組織のアクセス制御に自動適用する機能です。",
+   "topic": "認証方法と条件付きアクセス",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "同じ Azure リージョン内において、物理的に独立した電力、冷却装置、ネットワークを備えた複数のデータセンター群を活用し、単一の物理障害からアプリケーションの耐障害性を向上させる構成要素はどれか。",
+   "choices": [
+    "ペアリングされたリージョン",
+    "管理グループ",
+    "可用性ゾーン",
+    "リソースグループ"
+   ],
+   "answer": 2,
+   "explanation": "可用性ゾーンは、単一の Azure リージョン内における物理的に別個のデータセンター群です。独自の電力・冷却・ネットワーク構造を持ち、データセンターレベルの障害からアプリケーションとデータを保護します。",
+   "topic": "可用性ゾーンとデータセンター",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "クラウドインフラストラクチャ全体のセキュリティ体制（CSPM）を評価し、脆弱性の推奨事項の提示や脅威検出を実施するセキュリティ管理ツールはどれか。",
+   "choices": [
+    "Microsoft Defender for Cloud",
+    "Azure Sentinel",
+    "Azure Firewall",
+    "Microsoft Entra ID"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft Defender for Cloud は、クラウドセキュリティ姿勢管理 (CSPM) とクラウドスマート保護機能を提供し、Azure やその他の環境における構成ミスや脆弱性を発見して修正案を提示します。",
+   "topic": "Microsoft Defender for Cloud",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "数か月間にわたりアクセスされないログデータを極めて低い保管コストで長期間保存したいが、データの取得には数時間の準備期間が許容される。Azure Blob Storage のストレージアクセス層として適切なものはどれか。",
+   "choices": [
+    "アーカイブ層",
+    "クール層",
+    "ホット層",
+    "コールド層"
+   ],
+   "answer": 0,
+   "explanation": "アーカイブ層は、ほとんどアクセスされない履歴データの長期保存に最適化されており、ストレージ費用が最も低価です。データを取り出す（データ復元する）までに数時間の検索時間を要します。",
+   "topic": "ストレージ層と冗長性",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "クラウドとオンプレミスのハイブリッド環境において、単一の ID 基盤を用いてユーザーのサインインを管理し、SaaS アプリケーションへのシングルサインオン (SSO) を提供するクラウドベースの ID 管理サービスはどれか。",
+   "choices": [
+    "Azure Key Vault",
+    "Azure Information Protection",
+    "Microsoft Entra ID",
+    "Microsoft Defender for Identity"
+   ],
+   "answer": 2,
+   "explanation": "Microsoft Entra ID（旧 Azure Active Directory）は、マルチクラウドおよびオンプレミスにまたがるユーザー認証と認可、シングルサインオン (SSO) を実現するクラウドベースの ID およびアクセス管理サービスです。",
+   "topic": "Microsoft Entra ID",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "プライマリリージョン全体で大規模な災害が発生した場合でも、数百キロメートル離れたセカンダリリージョンへのデータ自動複製によって保護する、Azure Storage のデータ冗長性オプションはどれか。",
+   "choices": [
+    "ゾーン冗長ストレージ (ZRS)",
+    "ローカル冗長ストレージ (LRS)",
+    "地理冗長ストレージ (GRS)",
+    "読み取りアクセス地理ゾーン冗長ストレージ (RA-GZRS)"
+   ],
+   "answer": 2,
+   "explanation": "地理冗長ストレージ (GRS) は、プライマリリージョン内で 3 回データを同期複製した後、数パーティション離れたペアリングされたセカンダリリージョンへ非同期でデータを複製し、大規模災害への耐性を提供します。",
+   "topic": "ストレージ層と冗長性",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azure 環境に存在するリソースのセキュリティ設定を継続的に分析し、全体的なセキュリティ状態をスコア化して視覚的に確認できる標準機能（指標）はどれか。",
+   "choices": [
+    "コンプライアンスポリシー (Compliance Policy)",
+    "コスト分析 (Cost Analysis)",
+    "セキュアスコア (Secure Score)",
+    "サービス正常性 (Service Health)"
+   ],
+   "answer": 2,
+   "explanation": "Microsoft Defender for Cloud で提供されるセキュアスコアは、セキュリティに関する推奨事項の達成度を集計し、リスクの軽減度合いを数値化して評価するための管理指標です。",
+   "topic": "Microsoft Defender for Cloud",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "分析処理など短時間で完了するワークロードにおいて、Azure の未使用のコンピューティング容量を活用することで、大幅な割引価格で利用できる仮想マシンのオプションはどれか。",
+   "choices": [
+    "Azure Reserved Virtual Machine Instances",
+    "Azure Spot Virtual Machines",
+    "Azure Dedicated Host",
+    "バースト可能仮想マシン (Bシリーズ)"
+   ],
+   "answer": 1,
+   "explanation": "Azure Spot Virtual Machines は、Azure の余剰コンピューティング容量を利用する形態であり、需要に応じて中断される可能性がありますが、通常の料金より大幅な低コストでワークロードを実行できます。",
+   "topic": "仮想マシンのオプション",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "開発チームが基礎となるオペレーティングシステムやサーバーインフラストラクチャの管理を行わずに、Web アプリケーションのコードを直接展開・ホストするために適した PaaS サービスはどれか。",
+   "choices": [
+    "Azure Virtual Machines",
+    "Azure Dedicated Host",
+    "Azure Virtual Desktop",
+    "Azure App Service"
+   ],
+   "answer": 3,
+   "explanation": "Azure App Service は、インフラストラクチャ管理を要さずに Web アプリケーションや REST API を構築・ホストできる完全管理型の Platform as a Service (PaaS) です。",
+   "topic": "アプリケーションホスティング",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "オンプレミスのデータセンターと Azure 仮想ネットワークとの間において、パブリックインターネットを経由せず、高い信頼性と高速な通信を実現する専有型プライベート接続ソリューションはどれか。",
+   "choices": [
+    "Azure Virtual Network Peering",
+    "Azure ExpressRoute",
+    "Azure Application Gateway",
+    "Azure VPN Gateway (Site-to-Site)"
+   ],
+   "answer": 1,
+   "explanation": "Azure ExpressRoute は、接続プロバイダーを介してオンプレミスネットワークを Azure へ拡張する専有接続サービスです。パブリックインターネットを経由しないため、優れたセキュリティと低遅延を提供します。",
+   "topic": "VPN GatewayとExpressRoute",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "すべてのネットワークトラフィックを信頼せず、明示的に検証を行い、万が一侵入された場合でも被害の影響範囲を最小限に抑えるというセキュリティ戦略の原則はどれか。",
+   "choices": [
+    "ゼロトラスト (Zero Trust) モデル",
+    "ハイブリッドクラウドアーキテクチャ",
+    "共同責任モデル",
+    "単一障害点 (SPOF) の排除"
+   ],
+   "answer": 0,
+   "explanation": "ゼロトラストモデルは、「決して信頼せず、常に検証する」を原則とし、明示的な検証、最小権限アクセス、侵害の想定という 3 つの要素に基づいてセキュリティを構築する概念です。",
+   "topic": "ゼロトラストと多層防御",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "イベント駆動型（イベントの発生に応じて起動する）のアーキテクチャに適しており、処理が実行されている間のみ課金対象となるサーバーレスコンピューティングサービスはどれか。",
+   "choices": [
+    "Azure Batch",
+    "Azure Functions",
+    "Azure Virtual Desktop",
+    "Azure Virtual Machines"
+   ],
+   "answer": 1,
+   "explanation": "Azure Functions はサーバーレスのイベント駆動型コンピューティングサービスであり、コードの実行に必要なインフラ管理が不要で、トリガーによって処理が動いた時間分のみ課金されます。",
+   "topic": "コンピューティングの種類",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "社外からのアクセスや特定のアプリケーション利用時に、パスワードに加えてスマートフォン等による認証コード入力を必須化することでセキュリティを強化する仕組みはどれか。",
+   "choices": [
+    "リソースロック",
+    "多要素認証 (MFA)",
+    "パスワードレス署名",
+    "シングルサインオン (SSO)"
+   ],
+   "answer": 1,
+   "explanation": "多要素認証 (MFA) は、知識情報（パスワード）、所持情報（スマートフォン）、生体情報など、複数の異なる要素を組み合わせることで認証時の安全性を大幅に高めるプロセスです。",
+   "topic": "認証方法と条件付きアクセス",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "高利用率を確保するために、物理的に離れた各データセンター間で低遅延なネットワーク接続を提供し、1つのゾーンに影響を与える災害時にもサービスを維持する仕組みとして正しい説明はどれか。",
+   "choices": [
+    "地球上の異なる大陸にあるデータセンター同士を常にペアとして自動統合する",
+    "同一リージョン内の独立したデータセンター間で、インフラを共有せず個別の電源とネットワークを備えている",
+    "データセンターのメンテナンス時に作業員がアクセスを制限するための物理パーティションである",
+    "仮想マシンを同じ物理ラック内に配置することでネットワーク帯域を最大化する"
+   ],
+   "answer": 1,
+   "explanation": "可用性ゾーンは、単一リージョン内の物理的に分かれたデータセンター群で構成されており、個別の電源、冷却、ネットワークインフラを備えることで単一障害点を排除します。",
+   "topic": "可用性ゾーンとデータセンター",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "組織内の複数の Azure サブスクリプションに対して、統一されたガバナンスやアクセス権限、セキュリティ設定の管理レベルを最上位で提供する整理構造単位はどれか。",
+   "choices": [
+    "管理グループ",
+    "リソースグループ",
+    "可用性セット",
+    "タグ"
+   ],
+   "answer": 0,
+   "explanation": "管理グループは、サブスクリプションのさらに上位の階層で、複数のサブスクリプションをグループ化してアクセス、ポリシー、およびコンプライアンス管理を効率的に適用するための境界を提供します。",
+   "topic": "リソースグループとサブスクリプションの階層",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azure が各リージョンに対して同一地理範囲内で数百キロメートル離れた別のリージョンを定義し、計画的メンテナンスや大規模障害時の復旧の優先順位付けを行う概念はどれか。",
+   "choices": [
+    "エッジロケーション",
+    "リージョンペア (Region Pairs)",
+    "可用性ゾーン (Availability Zones)",
+    "地理的境界 (Geographies)"
+   ],
+   "answer": 1,
+   "explanation": "リージョンペアは、同一地理領域内（少なくとも数百マイル離れた場所）の 2 つのリージョンの組み合わせであり、更新の順次適用や障害復旧時の優先順位付けに活用されます。",
+   "topic": "リージョンとリージョンペア",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azure リソースの管理において、ライフサイクルが同じリソースをひとまとめにして整理・監視し、不要になった際は一括で削除できるようにするための単位はどれか。",
+   "choices": [
+    "サブスクリプション",
+    "管理グループ",
+    "リソースグループ",
+    "テナント"
+   ],
+   "answer": 2,
+   "explanation": "リソースグループは、Azure ソリューションの関連するリソースを保持する論理的なコンテナーです。グループ単位でのアクセス制御や、一括でのリソース削除などに活用されます。",
+   "topic": "リソースグループとサブスクリプションの階層",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Docker コンテナーを利用してアプリケーションを展開する際、基盤となる仮想マシンの運用管理を行うことなく、軽量にコンテナーを実行できるサーバーレスコンテナーサービスはどれか。",
+   "choices": [
+    "Azure Container Instances",
+    "Azure App Service (Windows版)",
+    "Azure Virtual Machines",
+    "Azure Batch"
+   ],
+   "answer": 0,
+   "explanation": "Azure Container Instances (ACI) は、仮想マシンの管理やオーケストレーションツールの導入を必要とせず、高速かつオンデマンドでコンテナーを即座に実行できるサービスです。",
+   "topic": "コンピューティングの種類",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azure リソースの誤操作による変更や削除を防止するために、リソースグループまたは個別のリソースに対して設定する機能はどれか。",
+   "choices": [
+    "リソースロック",
+    "Azure Policy",
+    "ネットワークセキュリティグループ",
+    "Azure RBAC"
+   ],
+   "answer": 0,
+   "explanation": "リソースロックは、Azure リソースに対する予期せぬ削除（CanNotDelete）や変更（ReadOnly）を防ぐために設定する保護機能です。",
+   "topic": "RBAC",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "標準的な SMB プロトコルに対応し、Windows や Linux、macOS などの複数の環境からネットワーク経由で共有アクセス可能なクラウドファイルシステムを提供するサービスはどれか。",
+   "choices": [
+    "Azure Table Storage",
+    "Azure Blob Storage",
+    "Azure Files",
+    "Azure Queue Storage"
+   ],
+   "answer": 2,
+   "explanation": "Azure Files は、クラウドまたはオンプレミスのデプロイからアクセス可能な、完全管理型のネットワーク共有ファイルを提供するサービスであり、SMB や NFS プロトコルに対応しています。",
+   "topic": "Azure Storageサービス",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "インターネット経由でオンプレミス拠点のルーターと Azure の仮想ネットワーク間を暗号化されたトンネルで接続する、費用対効果の高い接続方法はどれか。",
+   "choices": [
+    "Azure Peering Service",
+    "S2S (サイト間) VPN 接続",
+    "Azure Private Link",
+    "Azure ExpressRoute"
+   ],
+   "answer": 1,
+   "explanation": "Azure VPN Gateway を利用した S2S (サイト間) VPN 接続は、IPsec/IKE トンネルを使用して、パブリックインターネット経由でオンプレミスネットワークと Azure を暗号化接続します。",
+   "topic": "VPN GatewayとExpressRoute",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azure 上の PaaS サービス（例: Azure SQL Database）に対して、インターネットに公開することなく、仮想ネットワーク内のプライベート IP アドレスを使用して直接安全に接続する仕組みはどれか。",
+   "choices": [
+    "Azure Public IP Address",
+    "Azure ExpressRoute",
+    "Azure NAT Gateway",
+    "Azure Private Endpoint"
+   ],
+   "answer": 3,
+   "explanation": "Azure Private Endpoint は、仮想ネットワーク内のプライベート IP アドレスを使用して Azure PaaS サービスなどに接続できるようにするネットワークインターフェイスであり、データ漏洩のリスクを軽減します。",
+   "topic": "仮想ネットワークとエンドポイント",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "数テラバイトからペタバイト規模の大容量データを物理的な専用ハードウェアデバイスに暗号化保存し、Microsoft のデータセンターへ送付して転送を行うオフライン移行サービスはどれか。",
+   "choices": [
+    "Azure Data Box",
+    "AzCopy",
+    "Azure Data Factory",
+    "Azure Migrate"
+   ],
+   "answer": 0,
+   "explanation": "Azure Data Box は、大量のデータを安全、迅速かつ安価に Azure へ物理的に配送・移行するためのセキュアな堅牢型ハードウェアデバイスを提供するサービスです。",
+   "topic": "ファイル移動と移行ツール",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "自社の物理サーバーを占有してライセンスの要件を満たす必要があり、他のマルチテナント環境とハードウェアを共有したくない場合に使用する Azure VM の配置モデルはどれか。",
+   "choices": [
+    "バースト可能 VM インスタンス",
+    "Azure Spot Virtual Machines",
+    "Azure Virtual Machine Scale Sets",
+    "Azure Dedicated Host"
+   ],
+   "answer": 3,
+   "explanation": "Azure Dedicated Host は、1 つの組織専用に単一テナントの物理サーバーを提供するサービスであり、既存のソフトウェアライセンスのコンプライアンス遵守などに役立ちます。",
+   "topic": "仮想マシンのオプション",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "短期間のバッチ処理や開発環境のテストなど、中断が発生しても問題ないワークロードにおいて、コストを大幅に削減したい場合に最適な仮想マシンの構成はどれですか。",
+   "choices": [
+    "バースト可能（Bシリーズ）仮想マシン",
+    "専用ホスト（Azure Dedicated Host）",
+    "予約済み仮想マシンインスタンス（Reserved Instances）",
+    "Azure Spot Virtual Machines"
+   ],
+   "answer": 3,
+   "explanation": "Azure Spot Virtual Machinesは、Azureの未利用コンピューティング容量を大幅な割引価格で利用できるオプションです。Azure側で容量が必要になった場合に中断される可能性があるため、割り込み可能なバッチ処理などに適しています。",
+   "topic": "仮想マシンのオプション",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "大規模なデータ分析プロジェクトにおいて、ペタバイト規模の非定型データに対して超高速な分析処理を行いたいと考えています。この要件に最適化されたストレージ機能はどれですか。",
+   "choices": [
+    "Azure Data Lake Storage Gen2",
+    "Azure Disk Storage",
+    "Azure Queue Storage",
+    "Azure Files"
+   ],
+   "answer": 0,
+   "explanation": "Azure Data Lake Storage Gen2は、Azure Blob Storageをベースに階層型名前空間機能を提供し、ビッグデータ分析に最適化されたストレージソリューションです。大量の非構造化データの高速分析を可能にします。",
+   "topic": "Azure Storageサービス",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "社外の特定IPアドレスからのアクセスや、未管理のデバイスからのサインインに対してのみ多要素認証（MFA）を要求したいと考えています。これを実現するMicrosoft Entra IDの機能はどれですか。",
+   "choices": [
+    "Microsoft Entra Domain Services",
+    "条件付きアクセス（Conditional Access）",
+    "ロールベースのアクセス制御（Azure RBAC）",
+    "セルフサービスパスワードリセット（SSPR）"
+   ],
+   "answer": 1,
+   "explanation": "条件付きアクセスは、ユーザーの場所、デバイス、アプリなどのシグナルに基づいてアクセス制御ポリシーを自動的に適用する機能です。条件に応じたMFA要求やアクセスブロックが可能です。",
+   "topic": "認証方法と条件付きアクセス",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "パスワードを使用せずに、生体認証やセキュリティキーを用いて安全にサインインする環境を構築したい場合、利用可能な認証規格・機能はどれですか。",
+   "choices": [
+    "FIDO2 セキュリティキー",
+    "Kerberos 票発行サービス",
+    "SAML 2.0 単一フェデレーション",
+    "RADIUS 外部認証"
+   ],
+   "answer": 0,
+   "explanation": "FIDO2 セキュリティキーや Windows Hello for Business は、Microsoft Entra ID でサポートされているパスワードレス認証手段です。パスワードを使わずに高レベルのセキュリティを実現します。",
+   "topic": "認証方法と条件付きアクセス",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "組織内で複数の部門が作成するAzureリソースに対して、一括でアクセス許可やポリシーを適用し、最上位レベルで統制を管理するための階層コンポーネントはどれですか。",
+   "choices": [
+    "管理グループ（Management groups）",
+    "リソースマネージャー（Azure Resource Manager）",
+    "サブスクリプション（Subscriptions）",
+    "リソースグループ（Resource groups）"
+   ],
+   "answer": 0,
+   "explanation": "管理グループは、複数のサブスクリプションの上位に位置する管理階層です。管理グループレベルでアクセス許可やAzure Policyを適用することで、組織全体の統制を効率的に管理できます。",
+   "topic": "リソースグループとサブスクリプションの階層",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "オンプレミスの物理サーバーや仮想マシン群をAzureへ一括で調査・評価し、スムーズに移行するための統合プラットフォームはどれですか。",
+   "choices": [
+    "Azure Migrate",
+    "Azure Data Box",
+    "AzCopy",
+    "Azure Storage Explorer"
+   ],
+   "answer": 0,
+   "explanation": "Azure Migrateは、オンプレミス環境の評価・移行を統合的にサポートするハブサービスです。サーバー、データベース、WebアプリなどのAzure移行を合理化します。",
+   "topic": "ファイル移動と移行ツール",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "「明示的に検証する」「最小権限アクセスを使用する」「侵害を想定する」という3つの原則に基づいたセキュリティアプローチはどれですか。",
+   "choices": [
+    "共同責任モデル（Shared Responsibility Model）",
+    "ゼロトラスト（Zero Trust）モデル",
+    "多層防御（Defense in Depth）戦略",
+    "単一障害点（SPOF）排除モデル"
+   ],
+   "answer": 1,
+   "explanation": "ゼロトラストモデルは、ネットワークの内外を問わずすべてのアクセス要求を信用せず、常に明示的に検証を行う現代的なセキュリティコンセプトです。",
+   "topic": "ゼロトラストと多層防御",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azure PaaSサービス（Azure SQL Databaseなど）への接続を、パブリックインターネットに出さず、自社仮想ネットワーク内のプライベートIPアドレス経由に限定する機能はどれですか。",
+   "choices": [
+    "Azure NAT Gateway",
+    "Azure Private Endpoint",
+    "Azure Service Endpoint",
+    "Azure Bastion"
+   ],
+   "answer": 1,
+   "explanation": "Azure Private Endpointは、Azure PaaSサービスに仮想ネットワーク内のプライベートIPアドレスを割り当て、プライベートかつ安全に接続するためのネットワークインターフェイスです。",
+   "topic": "仮想ネットワークとエンドポイント",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "数ヶ月間アクセスされる予定はないが、緊急時には数時間以内にアクセスできる必要があるログデータを保管する場合、最も費用対効果の高いアクセス層はどれですか。",
+   "choices": [
+    "クール（Cool）アクセス層",
+    "ホット（Hot）アクセス層",
+    "コールド（Cold）アクセス層",
+    "アーカイブ（Archive）アクセス層"
+   ],
+   "answer": 2,
+   "explanation": "コールドアクセス層は、少なくとも90日間アクセスされないデータの保管に適した層で、アーカイブ層と異なり即座にアクセス可能です。クール層より保持コストが安くなります。",
+   "topic": "ストレージ層と冗長性",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azureにおいて、大規模な災害に備えて同一地理的領域内の300マイル以上離れた場所に配置され、自動的に同期やデータのバックアップ連携が行われる概念はどれですか。",
+   "choices": [
+    "ソブリンリージョン（Sovereign Regions）",
+    "可用性セット（Availability Sets）",
+    "リージョンペア（Region Pairs）",
+    "可用性ゾーン（Availability Zones）"
+   ],
+   "answer": 2,
+   "explanation": "リージョンペアは、同一地理的領域内で数百マイル離れた2つのリージョンを結合したものです。大規模災害時のデータ復旧やシステム停止を防ぐ設計に役立ちます。",
+   "topic": "リージョンとリージョンペア",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "異なる2つのAzure仮想ネットワーク（VNet）間を、ルーターやインターネットを経由せず、Microsoftのバックボーンネットワークを通じて低遅延で直接接続する技術はどれですか。",
+   "choices": [
+    "VPN Gateway 接続",
+    "ExpressRoute 接続",
+    "Azure Front Door",
+    "仮想ネットワークピアリング（VNet Peering）"
+   ],
+   "answer": 3,
+   "explanation": "VNetピアリングを使用すると、2つの仮想ネットワークをスムーズに接続できます。トラフィックはプライベートなMicrosoftネットワークを通過するため高速で安全です。",
+   "topic": "仮想ネットワークとエンドポイント",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "物理的なセキュリティ、ネットワーク境界、計算リソース、データ保護など、複数の階層で対策を講じることで単一の防御破りに備えるセキュリティ設計思想はどれですか。",
+   "choices": [
+    "ジャストインタイム（JIT）アクセス",
+    "情報共有分析（ISAC）",
+    "ゼロトラスト（Zero Trust）",
+    "多層防御（Defense in Depth）"
+   ],
+   "answer": 3,
+   "explanation": "多層防御は、データの不正アクセスを防ぐために、物理層からアプリケーション・データ層に至るまで複数のレイヤーで保護を行うセキュリティの考え方です。",
+   "topic": "ゼロトラストと多層防御",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "インフラやOSの管理を一切行わず、コードをデプロイするだけでイベント駆動型のプログラムを実行できる、サーバーレスコンピューティングサービスはどれですか。",
+   "choices": [
+    "Azure App Service",
+    "Azure Virtual Machines",
+    "Azure Container Instances",
+    "Azure Functions"
+   ],
+   "answer": 3,
+   "explanation": "Azure FunctionsはFaaS（Function as a Service）を提供するサーバーレスサービスであり、特定のイベント（タイマーやHTTP要求など）を契機にコードを実行します。",
+   "topic": "アプリケーションホスティング",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "数テラバイトのローカルデータを、コマンドラインインターフェイスを使用して高速かつスクリプト経由でAzure Blob Storageに同期・転送するのに適したツールはどれですか。",
+   "choices": [
+    "AzCopy",
+    "Azure Import/Export Service",
+    "Azure Storage Explorer",
+    "Azure File Sync"
+   ],
+   "answer": 0,
+   "explanation": "AzCopyは、Azure StorageへのBlobやファイルのコピー用に設計されたコマンドラインユーティリティで、スクリプトによる高速転送に適しています。",
+   "topic": "ファイル移動と移行ツール",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azure上のマルチクラウド環境やハイブリッド環境のリソースに対して、セキュリティ姿勢の評価や脅威保護、脆弱性の検出を一元的に提供する管理ツールはどれですか。",
+   "choices": [
+    "Azure Policy",
+    "Azure Advisor",
+    "Microsoft Sentinel",
+    "Microsoft Defender for Cloud"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Defender for Cloudは、クラウドセキュリティ姿勢管理（CPSM）とクラウドワークロード保護プラットフォーム（CWPP）を提供する統合セキュリティ管理ツールです。",
+   "topic": "Microsoft Defender for Cloud",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "1つのAzureリージョン内において、独立した電源、冷却装置、ネットワークを備えた物理的に離れたデータセンターの場所を指す単位はどれですか。",
+   "choices": [
+    "エッジロケーション（Edge Locations）",
+    "可用性ゾーン（Availability Zones）",
+    "リソースグループ（Resource Groups）",
+    "可用性セット（Availability Sets）"
+   ],
+   "answer": 1,
+   "explanation": "可用性ゾーンは、単一のリージョン内に存在するユニークな物理的場所です。独立した電源や冷却を備えており、データセンターレベルの障害からの保護を提供します。",
+   "topic": "可用性ゾーンとデータセンター",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "WebアプリケーションをホストするためのPaaS環境であり、インフラの保守を行わずに自動スケールやSSL証明書の管理、CI/CD連携を利用できるサービスはどれですか。",
+   "choices": [
+    "Azure Virtual Machines",
+    "Azure Container Apps",
+    "Azure Spring Apps",
+    "Azure App Service"
+   ],
+   "answer": 3,
+   "explanation": "Azure App Serviceは、Webアプリケーションやモバイルバックエンドをデプロイ・スケールするためのHTTPベースのPaaSサービスです。",
+   "topic": "アプリケーションホスティング",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Dockerコンテナイメージを、基礎となるサーバーの管理やKubernetesのような複雑なオーケストレータの設定をせずに、即座に実行できる最もシンプルなPaaS型サービスはどれですか。",
+   "choices": [
+    "Azure Virtual Machines",
+    "Azure Kubernetes Service",
+    "Azure Red Hat OpenShift",
+    "Azure Container Instances"
+   ],
+   "answer": 3,
+   "explanation": "Azure Container Instances（ACI）は、仮想マシンをプロビジョニングしたり上位のサービスを管理したりすることなく、迅速にコンテナを実行できるサービスです。",
+   "topic": "コンピューティングの種類",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "クラウドネイティブなアイデンティティおよびアクセス管理サービスであり、ユーザー認証、外部パートナーとの連携（B2B）、シングルサインオン（SSO）を提供するものはどれですか。",
+   "choices": [
+    "Azure Active Directory Domain Services",
+    "Azure Key Vault",
+    "Microsoft Defender for Identity",
+    "Microsoft Entra ID"
+   ],
+   "answer": 3,
+   "explanation": "Microsoft Entra IDは、Microsoftが提供するクラウドベースのIDおよびアクセス管理サービスです（旧Azure Active Directoryから名称変更されました）。",
+   "topic": "Microsoft Entra ID",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azure Storageにおいて、同一リージョン内の3つの可用性ゾーンにわたってデータを同期複製し、1つのゾーンに障害が発生しても高可用性を維持する冗長性オプションはどれですか。",
+   "choices": [
+    "地理ゾーン冗長ストレージ（GZRS）",
+    "地理冗長ストレージ（GRS）",
+    "ゾーン冗長ストレージ（ZRS）",
+    "ローカル冗長ストレージ（LRS）"
+   ],
+   "answer": 2,
+   "explanation": "ゾーン冗長ストレージ（ZRS）は、プライマリリージョン内の3つのAzure可用性ゾーンにわたってストレージデータを同期的に複製します。",
+   "topic": "ストレージ層と冗長性",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "オンプレミスのActive Directoryを使用している企業が、ユーザーに同じ資格情報でAzure上のクラウドサービスにも認証できるようにするメカニズムはどれですか。",
+   "choices": [
+    "ハイブリッドアイデンティティ（パスワードハッシュ同期など）",
+    "ゲストユーザー招待（B2B）",
+    "条件付きアクセスポリシー",
+    "Azure RBACカスタムロール"
+   ],
+   "answer": 0,
+   "explanation": "Microsoft Entra Connectなどを利用したハイブリッドアイデンティティ構成により、オンプレミスとクラウド間でIDを統合し、シームレスな単一サインオン環境を実現します。",
+   "topic": "Microsoft Entra ID",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "SMBプロトコルをサポートし、既存のオンプレミスファイルサーバーをそのままクラウドへ移行して、複数の仮想マシンから同時にマウントしてアクセスできるストレージサービスはどれですか。",
+   "choices": [
+    "Azure Managed Disks",
+    "Azure Table Storage",
+    "Azure Blob Storage",
+    "Azure Files"
+   ],
+   "answer": 3,
+   "explanation": "Azure Filesは、業界標準のSMB（Server Message Block）やNFSプロトコルを介してアクセスできるフルマネージドなクラウドファイル共有機能です。",
+   "topic": "Azure Storageサービス",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "特定の物理サーバーハードウェアを自社専用として専有し、企業コンプライアンスやライセンス要件を満たすために使用される仮想マシンのデプロイモデルはどれですか。",
+   "choices": [
+    "Azure Dedicated Host",
+    "可用性セット（Availability Sets）",
+    "スケールセット（Virtual Machine Scale Sets）",
+    "Azure Spot Virtual Machines"
+   ],
+   "answer": 0,
+   "explanation": "Azure Dedicated Hostは、1つの非共有物理サーバー上でAzure仮想マシンをホストする専有物理ハードウェアサービスです。",
+   "topic": "仮想マシンのオプション",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "「開発者グループに対して、特定のリソースグループ内の仮想マシンの起動と停止のみを許可し、削除は禁止する」といったきめ細やかな権限管理を設定するための Azure 機能はどれですか。",
+   "choices": [
+    "リソースロック（Resource Locks）",
+    "ロールベースのアクセス制御（Azure RBAC）",
+    "Azure Policy",
+    "Microsoft Entra ID 保護"
+   ],
+   "answer": 1,
+   "explanation": "Azure RBAC（ロールベースのアクセス制御）は、「誰が」「何に対して」「どんな操作ができるか」を精細に管理・付与するための仕組みです。",
+   "topic": "RBAC",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  },
+  {
+   "q": "Azureのサービスが、コンプライアンスやデータ居住性（データ保管場所）の法規制要件に準拠するために選択される、特定の国や地域に閉じた地理的境界の単位はどれですか。",
+   "choices": [
+    "テナント（Tenant）",
+    "管理グループ（Management Group）",
+    "リージョン（Region）",
+    "可用性ゾーン（Availability Zone）"
+   ],
+   "answer": 2,
+   "explanation": "Azureリージョンは、データ保持ルールやコンプライアンス要件に合致する特定の地理的領域内に配置されており、ユーザーは適切なリージョンを選択してデータを保管します。",
+   "topic": "リージョンとリージョンペア",
+   "volatile": false,
+   "createdAt": "2026-11-08"
+  }
+ ]
+}
