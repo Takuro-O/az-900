@@ -1286,6 +1286,22 @@
     });
     return out;
   }
+  // すでに出した問題の「正解」の一覧（同じ正解の問題をAIに作らせないため）。そのドメインのものだけ。
+  function recentAnswers(field, limit = 120) {
+    const out = [], seen = new Set();
+    for (const h of state.history) {
+      if (field && field.id !== 'random' && h.field !== field.id) continue;
+      for (const q of (Array.isArray(h.questions) ? h.questions : [])) {
+        const a = q && Array.isArray(q.choices) ? q.choices[q.answer] : null;
+        if (typeof a !== 'string' || !a) continue;
+        const t = a.slice(0, 40);
+        if (seen.has(t)) continue;
+        seen.add(t); out.push(t);
+        if (out.length >= limit) return out;
+      }
+    }
+    return out;
+  }
   function removeDuplicates(cands, seen) {
     return cands.filter(q => {
       const g = questionGrams(q.q, q.choices);
@@ -1402,6 +1418,15 @@ ${topicPlan.map((t, i) => `${i + 1}. ${t}`).join('\n')}
 `
       : '';
 
+    const past = source ? [] : recentAnswers(field);
+    const avoidBlock = past.length
+      ? `【すでにある問題の正解】
+次の正解（またはその言い換え）になる問題は作らない。題材が重ならない問題を作る。
+${past.map(a => '- ' + a).join('\n')}
+
+`
+      : '';
+
     const prompt = `あなたは Microsoft 認定資格 AZ-900（Azure Fundamentals）の学習用問題を作成する専門家です。
 以下の条件で問題を${count + 1}問生成してください。
 
@@ -1414,7 +1439,7 @@ Microsoft Learn の AZ-900 学習ガイドの範囲から、独自に問題を�
 
 ${infoBlock}
 
-${planBlock}【良問の条件】
+${planBlock}${avoidBlock}【良問の条件】
 - 正解は1つだけ。他の3つは、明確に誤りと言える内容にする
 - 誤答の選択肢は、よくある勘違いや、似たサービス・似た概念との取り違えから作る
 - 誤答は、正解と同じ分類・同じ粒度の内容にする。知識がないと見分けられないようにし、次のような選択肢は作らない
@@ -1472,6 +1497,8 @@ ${planBlock}【良問の条件】
   }
 
   // ── 生成問題の検証・正規化（不正な問題は null → 除外） ──
+  // 旧名称（改称済み）。問題文・選択肢（ひっかけ含む）に使われた問題は捨てる。
+  const OLD_NAME_RE = /Azure\s*Active\s*Directory|Azure\s*AD(?![A-Za-z])|\bAAD\b|Azure\s*Sentinel|Azure\s*Security\s*Center|Azure\s*Defender|Azure\s*Information\s*Protection|Azure\s*Purview|Azure\s*Advanced\s*Threat\s*Protection/i;
   function normalizeQuestion(raw, field, useSource) {
     if (!raw || typeof raw !== 'object') return null;
     const q = typeof raw.q === 'string' ? raw.q.trim() : '';
@@ -1482,6 +1509,7 @@ ${planBlock}【良問の条件】
     if (choices.some(c => !c) || new Set(choices).size !== 4) return null;
     const answer = Number(raw.answer);
     if (!Number.isInteger(answer) || answer < 0 || answer > 3) return null;
+    if (!useSource && OLD_NAME_RE.test([q, ...choices].join('\n'))) return null;
 
     // 正解位置の偏り対策：選択肢をシャッフルして正解indexを追従させる
     const order = shuffle([0, 1, 2, 3]);
