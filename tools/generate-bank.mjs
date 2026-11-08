@@ -146,16 +146,18 @@ export async function generateAuto({ target = 50, outDir = path.join(ROOT, 'bank
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const apiKey = process.env.GEMINI_API_KEY;
+  // 1回の生成で作る問題数（環境変数 BATCH。多いほど、同じ呼び出し回数で問題が増える）
+  const BATCH = Math.min(40, Math.max(5, Number(process.env.BATCH) || 10));
   if (process.argv[2] === 'auto') {
     // 使い方: GEMINI_API_KEY=... node tools/generate-bank.mjs auto [目標問数=50]
     if (!apiKey) { console.error('GEMINI_API_KEY がありません'); process.exit(2); }
-    const r = await generateAuto({ target: Number(process.argv[3]) || 50, apiKey });
+    const r = await generateAuto({ target: Number(process.argv[3]) || 50, batch: BATCH, apiKey });
     console.log(r.status.join('\n'));
     console.log(`完了: ${r.added}問追加${r.stopped ? '（' + r.stopped + '）' : ''}`);
   } else {
     const [field, target] = process.argv.slice(2);
     if (!field || !apiKey) { console.error('使い方: GEMINI_API_KEY=... node tools/generate-bank.mjs <ドメインID> [問数]'); process.exit(2); }
-    const r = await generate({ field, target: Number(target) || 50, apiKey });
+    const r = await generate({ field, target: Number(target) || 50, batch: BATCH, apiKey });
     console.log(`完了: ${r.count}問${r.stopped ? '（' + r.stopped + '）' : ''}`);
   }
 }

@@ -21,6 +21,10 @@ on:
         description: '目標問数（1ドメインあたり）'
         required: false
         default: '50'
+      batch:
+        description: '1回の生成で作る問題数（5〜40。多いほど、同じ呼び出し回数で問題が増える）'
+        required: false
+        default: '10'
 
 permissions:
   contents: write
@@ -41,6 +45,7 @@ jobs:
           GEMINI_MODELS: ${{ inputs.models }}
           DOMAIN: ${{ inputs.domain }}
           TARGET: ${{ inputs.target || 50 }}
+          BATCH: ${{ inputs.batch || 10 }}
         run: |
           if [ -n "$DOMAIN" ]; then
             node tools/generate-bank.mjs "$DOMAIN" "$TARGET"
