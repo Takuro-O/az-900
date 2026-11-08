@@ -6,6 +6,7 @@ const mk=i=>({q:'Q'+i+'：'+uniq(i),choices:['正'+uniq(i,1),'誤甲'+uniq(i,2),
 const resp=o=>({ok:true,status:200,json:async()=>({candidates:[{finishReason:'STOP',content:{parts:[{text:JSON.stringify(o)}]}}]})});
 let mode='ok',calls=0;
 const f=async(url,opts)=>{calls++;const pr=JSON.parse(opts.body).contents[0].parts[0].text;
+ if(mode==='verify503'&&pr.includes('採点者'))return{ok:false,status:503,json:async()=>({error:{message:'overloaded'}})};
  if(mode==='quota')return{ok:false,status:429,json:async()=>({error:{details:[{quotaId:'RequestsPerDay'}]}})};
  if(pr.includes('採点者')){const items=JSON.parse(pr.slice(pr.indexOf('【問題】\n')+5));return resp({results:items.map(it=>({id:it.id,answer:it.choices.findIndex(c=>c.startsWith('正')),ambiguous:false,confidence:'high'}))});}
  return resp({questions:Array.from({length:14},()=>mk(n++))});};
@@ -21,4 +22,8 @@ const c0=calls;r=await generate({field:'arch',target:25,apiKey:'k',fetchImpl:f,o
 ok(calls===c0,'already at target → no API calls');
 mode='quota';r=await generate({field:'cloud',target:10,apiKey:'k',fetchImpl:f,outDir:dir,log:()=>{}});
 ok(/無料枠/.test(r.stopped)&&r.count===0,'quota stop: '+r.stopped);
+// 検算が失敗し続けたら、未検算の問題はバンクに入れない
+mode='verify503';const dir2=fs.mkdtempSync(path.join(os.tmpdir(),'bank-'));
+r=await generate({field:'cloud',target:10,apiKey:'k',fetchImpl:f,outDir:dir2,failureWaitMs:1,log:()=>{}});
+ok(r.count===0&&!fs.existsSync(path.join(dir2,'cloud.json'))&&/失敗が続いた/.test(r.stopped),'unverified batch is not saved: count='+r.count+' '+r.stopped);
 console.log(log.join('\n'));process.exit(log.some(l=>l.startsWith('FAIL'))?1:0);

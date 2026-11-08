@@ -44,9 +44,13 @@ async function runBatch({ html, apiKey, fetchImpl, field, count, existing, timeo
     const t0 = Date.now();
     while (Date.now() - t0 < timeoutMs) {
       await sleep(250);
-      const prog = w.localStorage.getItem('az900_quiz_progress_v1');
-      if (prog) return { questions: JSON.parse(prog).questions };
       const toast = [...d.querySelectorAll('[role=alert]')].map(e => e.textContent).join('|');
+      const prog = w.localStorage.getItem('az900_quiz_progress_v1');
+      if (prog) {
+        // 検算に失敗した問題はバンクに入れない（混雑などは待てば戻るので、失敗として再試行する）
+        if (/検算できませんでした/.test(toast)) return { error: '検算できなかったため破棄' };
+        return { questions: JSON.parse(prog).questions };
+      }
       if (toast) return { error: toast, quota: /無料枠/.test(toast) };
     }
     return { error: 'timeout' };
