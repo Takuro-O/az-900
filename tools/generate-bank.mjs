@@ -81,6 +81,13 @@ export async function generate({ field, target = 50, apiKey, fetchImpl = fetch, 
         if (u) extra = ` 出力${u.candidatesTokenCount ?? '?'}トークン 思考${u.thoughtsTokenCount ?? 0}トークン`;
       } catch {}
       log(`API ${name} → ${res.status} ${((Date.now() - t) / 1000).toFixed(0)}秒${extra}`);
+      if (!res.ok) { // 失敗の原因調べ用に、エラー内容の先頭を記録（APIキーは含まれない）
+        try {
+          const e = (await res.clone().json()).error || {};
+          const quota = (e.details || []).flatMap(d => (d.violations || []).map(v => `${v.quotaMetric || ''}/${v.quotaId || ''}`)).join(',');
+          log(`  エラー内容: ${String(e.message || '').slice(0, 300).replace(/\n/g, ' ')}${quota ? ' [' + quota + ']' : ''}`);
+        } catch {}
+      }
       return res;
     } catch (e) {
       log(`API ${name} → エラー(${e.name}) ${((Date.now() - t) / 1000).toFixed(0)}秒`);
