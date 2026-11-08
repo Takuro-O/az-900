@@ -18,6 +18,7 @@ function boot(ls,withFetch){return new JSDOM(html,{runScripts:'dangerously',url:
  ok(sentPrompt.includes('推奨テーマから最も近いものを1つ')&&sentPrompt.includes('リージョンとリージョンペア、可用性ゾーンとデータセンター')&&sentPrompt.includes('コンピューティングの種類、仮想マシンのオプション'),'prompt contains topic vocabulary of the field');
  ok(!sentPrompt.includes('コストに影響する要因'),'prompt vocabulary is field-specific (no 管理とガバナンス terms)');
  ok(sentPrompt.includes('Azure のサービス名・機能名は英語の正式名称で書く')&&sentPrompt.includes('数字と英字は半角')&&sentPrompt.includes('先頭に「A.」「ア」などの記号を付けない'),'prompt contains notation rules');
+ok(sentPrompt.includes('同じ題材・同じ場面')&&sentPrompt.includes('「暗号化キーを公開する」')&&sentPrompt.includes('「資本支出」「運用支出」とする'),'prompt: no duplicate scenes, no absurd distractors, unified CapEx/OpEx terms');
  ok(sentHeaders['x-goog-api-key']==='k','api key sent via header');
  const labels=[...d.querySelectorAll('.choice-btn')].map(b=>b.textContent);
  ok(labels.every(t=>/^[A-D]\. .{14}[甲乙丙丁]$/.test(t)),'choice labels stripped & re-labeled: '+labels.join(' | '));
