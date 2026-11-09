@@ -53,7 +53,7 @@
     "コールド層"
    ],
    "answer": 0,
-   "explanation": "アーカイブ層は、ほとんどアクセスされない履歴データの長期保存に最適化されており、ストレージ費用が最も低価です。データを取り出す（データ復元する）までに数時間の検索時間を要します。",
+   "explanation": "アーカイブ層は、ほとんどアクセスされないデータの長期保存向けで、ストレージ費用が最も低い層です。オフライン層のため、データを読み取るには、まず他の層へ復元（リハイドレート）する必要があり、数時間かかることがあります。",
    "topic": "ストレージ層と冗長性",
    "volatile": false,
    "createdAt": "2026-11-08"
@@ -299,12 +299,12 @@
   {
    "q": "パスワードを使用せずに、生体認証やセキュリティキーを用いて安全にサインインする環境を構築したい場合、利用可能な認証規格・機能はどれですか。",
    "choices": [
+    "パスワードの複雑さを強化するポリシー",
+    "セキュリティの質問への回答",
     "FIDO2 セキュリティキー",
-    "Kerberos 票発行サービス",
-    "SAML 2.0 単一フェデレーション",
-    "RADIUS 外部認証"
+    "パスワードの有効期限の短縮"
    ],
-   "answer": 0,
+   "answer": 2,
    "explanation": "FIDO2 セキュリティキーや Windows Hello for Business は、Microsoft Entra ID でサポートされているパスワードレス認証手段です。パスワードを使わずに高レベルのセキュリティを実現します。",
    "topic": "認証方法と条件付きアクセス",
    "volatile": false,
@@ -375,7 +375,7 @@
     "Microsoft Defender for Cloud"
    ],
    "answer": 3,
-   "explanation": "Microsoft Defender for Cloudは、クラウドセキュリティ姿勢管理（CPSM）とクラウドワークロード保護プラットフォーム（CWPP）を提供する統合セキュリティ管理ツールです。",
+   "explanation": "Microsoft Defender for Cloudは、クラウドセキュリティ姿勢管理（CSPM）とクラウドワークロード保護プラットフォーム（CWPP）を提供する統合セキュリティ管理ツールです。",
    "topic": "Microsoft Defender for Cloud",
    "volatile": false,
    "createdAt": "2026-11-08"
