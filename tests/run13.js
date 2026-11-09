@@ -6,7 +6,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const uniq=(i,k=0,len=14)=>Array.from({length:len},(_,j)=>String.fromCharCode(0x4e00+i*400+k*60+j)).join('');
 const mk=(i,extra={})=>({q:'問題'+i+uniq(i),choices:[uniq(i,1)+'甲',uniq(i,2)+'乙',uniq(i,3)+'丙',uniq(i,4)+'丁'],answer:0,explanation:'解説'+i,topic:'Microsoft Entra ID',...extra});
 let sent='';
-const fakeQs=[mk(0),mk(1,{choices:['Azure AD '+uniq(1,1),uniq(1,2),uniq(1,3),uniq(1,4)]}),mk(2,{q:'Azure Sentinel を使う'+uniq(2)}),
+let fakeQs=[mk(0),mk(1,{choices:['Azure AD '+uniq(1,1),uniq(1,2),uniq(1,3),uniq(1,4)]}),mk(2,{q:'Azure Sentinel を使う'+uniq(2)}),
   mk(3,{explanation:'旧名称は Azure Active Directory です。'}),mk(4),mk(5),mk(6)];
 const fakeFetch=async(url,opts)=>{const pr=JSON.parse(opts.body).contents[0].parts[0].text;if(!pr.includes('採点者'))sent=pr;
   return {ok:true,status:200,json:async()=>({candidates:[{finishReason:'STOP',content:{parts:[{text:JSON.stringify({questions:fakeQs})}]}}]})};};
@@ -26,5 +26,13 @@ function boot(ls){return new JSDOM(html,{runScripts:'dangerously',url:'https://x
   ok(qs.length===5,'5 questions started: '+qs.length);
   ok(!/Azure AD|Azure Sentinel/.test(all),'old names in question/choices dropped');
   ok(all.includes('Azure Active Directory'),'old name allowed in explanation');
+  // 同じ正解の問題は、同じバッチ内でも1問だけ残す
+  const mkq=(i,a)=>({q:'別題材'+uniq(i+20),choices:[a,uniq(i+20,2)+'乙',uniq(i+20,3)+'丙',uniq(i+20,4)+'丁'],answer:0,explanation:'e'+i,topic:'Microsoft Entra ID'});
+  fakeQs=[mkq(0,'Azure Arc'),mkq(1,'Azure  Arc（旧称なし）'),mkq(2,'Microsoft Purview'),mkq(3,'Azure Arc'),mkq(4,'Azure Policy'),mkq(5,'Azure Monitor'),mkq(6,'Azure Advisor')];
+  const w2=boot({bizcareer_gemini_key:'k'});await wait(200);
+  w2.openConfig('mgmt');w2.selectCount(5);w2.document.getElementById('start-btn').click();await wait(500);
+  const p2=JSON.parse(w2.localStorage.getItem('az900_quiz_progress_v1')||'null');
+  const keys=(p2?p2.questions:[]).map(q=>q.choices[q.answer].replace(/[\s（）]|旧称なし/g,''));
+  ok(p2&&keys.length>=4&&new Set(keys).size===keys.length&&keys.filter(k=>k==='AzureArc').length===1,'same correct answer kept once: '+keys.join(','));
   console.log(log.join('\n'));process.exit(log.some(l=>l.startsWith('FAIL'))?1:0);
 })();

@@ -1277,11 +1277,18 @@
     for (const x of a) if (b.has(x)) inter++;
     return inter / (a.size + b.size - inter);
   }
+  // 正解の選択肢を比べやすい形にする（空白・記号・かっこ内を除く）。同じ正解の問題を重複とみなすのに使う
+  function answerKey(q) {
+    const a = q && Array.isArray(q.choices) ? q.choices[q.answer] : '';
+    return typeof a === 'string'
+      ? a.replace(/[（(][^）)]*[）)]/g, '').replace(/[\s\u3000、。・,.:：;；\-ー]/g, '').toLowerCase()
+      : '';
+  }
   function recentQuestionGrams() {
     const out = [];
     state.history.slice(0, RECENT_SESSIONS).forEach(h => {
       (Array.isArray(h.questions) ? h.questions : []).forEach(q => {
-        if (q && typeof q.q === 'string' && Array.isArray(q.choices)) out.push(questionGrams(q.q, q.choices));
+        if (q && typeof q.q === 'string' && Array.isArray(q.choices)) { const g = questionGrams(q.q, q.choices); g.ans = answerKey(q); out.push(g); }
       });
     });
     return out;
@@ -1305,7 +1312,8 @@
   function removeDuplicates(cands, seen) {
     return cands.filter(q => {
       const g = questionGrams(q.q, q.choices);
-      if (seen.some(s => jaccard(s, g) >= DUP_THRESHOLD)) return false;
+      g.ans = answerKey(q);
+      if (seen.some(s => jaccard(s, g) >= DUP_THRESHOLD || (g.ans && s.ans === g.ans))) return false; // 同じ正解も重複とみなす
       seen.push(g);
       return true;
     });
