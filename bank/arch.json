@@ -1,6 +1,6 @@
 {
  "field": "arch",
- "updatedAt": "2026-11-08",
+ "updatedAt": "2026-11-09",
  "questions": [
   {
    "q": "ある企業において、特定のプロジェクトチームに対して Azure の仮想ネットワークの管理権限のみを付与し、仮想マシンの削除やストレージのアカウント操作は実行できないように設定したいと考えています。適切なアクセス制御を実現するために適用すべき概念として、最も適切なものはどれか。",
@@ -69,20 +69,6 @@
    "answer": 2,
    "explanation": "Microsoft Defender for Cloud で提供されるセキュアスコアは、セキュリティに関する推奨事項の達成度を集計し、リスクの軽減度合いを数値化して評価するための管理指標です。",
    "topic": "Microsoft Defender for Cloud",
-   "volatile": false,
-   "createdAt": "2026-11-08"
-  },
-  {
-   "q": "分析処理など短時間で完了するワークロードにおいて、Azure の未使用のコンピューティング容量を活用することで、大幅な割引価格で利用できる仮想マシンのオプションはどれか。",
-   "choices": [
-    "Azure Reserved Virtual Machine Instances",
-    "Azure Spot Virtual Machines",
-    "Azure Dedicated Host",
-    "バースト可能仮想マシン (Bシリーズ)"
-   ],
-   "answer": 1,
-   "explanation": "Azure Spot Virtual Machines は、Azure の余剰コンピューティング容量を利用する形態であり、需要に応じて中断される可能性がありますが、通常の料金より大幅な低コストでワークロードを実行できます。",
-   "topic": "仮想マシンのオプション",
    "volatile": false,
    "createdAt": "2026-11-08"
   },
@@ -213,20 +199,6 @@
    "createdAt": "2026-11-08"
   },
   {
-   "q": "Azure リソースの誤操作による変更や削除を防止するために、リソースグループまたは個別のリソースに対して設定する機能はどれか。",
-   "choices": [
-    "リソースロック",
-    "Azure Policy",
-    "ネットワークセキュリティグループ",
-    "Azure RBAC"
-   ],
-   "answer": 0,
-   "explanation": "リソースロックは、Azure リソースに対する予期せぬ削除（CanNotDelete）や変更（ReadOnly）を防ぐために設定する保護機能です。",
-   "topic": "リソースグループとサブスクリプションの階層",
-   "volatile": false,
-   "createdAt": "2026-11-08"
-  },
-  {
    "q": "標準的な SMB プロトコルに対応し、Windows や Linux、macOS などの複数の環境からネットワーク経由で共有アクセス可能なクラウドファイルシステムを提供するサービスはどれか。",
    "choices": [
     "Azure Table Storage",
@@ -279,20 +251,6 @@
    "answer": 0,
    "explanation": "Azure Data Box は、大量のデータを安全、迅速かつ安価に Azure へ物理的に配送・移行するためのセキュアな堅牢型ハードウェアデバイスを提供するサービスです。",
    "topic": "ファイル移動と移行ツール",
-   "volatile": false,
-   "createdAt": "2026-11-08"
-  },
-  {
-   "q": "自社の物理サーバーを占有してライセンスの要件を満たす必要があり、他のマルチテナント環境とハードウェアを共有したくない場合に使用する Azure VM の配置モデルはどれか。",
-   "choices": [
-    "バースト可能 VM インスタンス",
-    "Azure Spot Virtual Machines",
-    "Azure Virtual Machine Scale Sets",
-    "Azure Dedicated Host"
-   ],
-   "answer": 3,
-   "explanation": "Azure Dedicated Host は、1 つの組織専用に単一テナントの物理サーバーを提供するサービスであり、既存のソフトウェアライセンスのコンプライアンス遵守などに役立ちます。",
-   "topic": "仮想マシンのオプション",
    "volatile": false,
    "createdAt": "2026-11-08"
   },
@@ -407,6 +365,342 @@
    "topic": "Microsoft Entra ID",
    "volatile": false,
    "createdAt": "2026-11-08"
+  },
+  {
+   "q": "政府機関など、特定の法令やコンプライアンスの要件を満たすために、独立して提供される Azure のリージョンはどれですか。",
+   "choices": [
+    "管理グループ",
+    "可用性ゾーン",
+    "ソブリン リージョン",
+    "リージョン ペア"
+   ],
+   "answer": 2,
+   "explanation": "ソブリン リージョンは、主権やコンプライアンスの要件を満たすために、通常のリージョンとは別に提供される Azure のインスタンスです。",
+   "topic": "リージョンとリージョンペア",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "可用性ゾーンに対応しているリージョンで、有効なゾーンの数は、少なくとも幾つですか。",
+   "choices": [
+    "1つ",
+    "2つ",
+    "3つ",
+    "5つ"
+   ],
+   "answer": 2,
+   "explanation": "可用性ゾーンに対応するリージョンには、物理的に分離されたゾーンが、少なくとも3つあります。",
+   "topic": "可用性ゾーンとデータセンター",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リソースグループについて、正しい説明はどれですか。",
+   "choices": [
+    "1つのリソースは、同時に複数のリソースグループに属せる",
+    "リソースグループを削除しても、中のリソースは残る",
+    "1つのリソースは、同時に1つのリソースグループにだけ属する",
+    "リソースグループは、入れ子にできる"
+   ],
+   "answer": 2,
+   "explanation": "リソースは、必ず1つのリソースグループに属します。リソースグループを入れ子にすることはできません。また、リソースグループを削除すると、中のリソースも削除されます。",
+   "topic": "リソースグループとサブスクリプションの階層",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure のサブスクリプションの役割として、正しいものはどれですか。",
+   "choices": [
+    "データのバックアップの世代を管理する",
+    "物理的なデータセンターの場所を表す",
+    "請求の単位であり、リソースへのアクセスを管理する境界となる",
+    "仮想ネットワーク内の IP アドレスの範囲を表す"
+   ],
+   "answer": 2,
+   "explanation": "サブスクリプションは、リソースを作成するための論理的な単位です。請求は、サブスクリプション単位でまとめられます。",
+   "topic": "リソースグループとサブスクリプションの階層",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure の管理の階層を、大きい順に並べたものはどれですか。",
+   "choices": [
+    "管理グループ → サブスクリプション → リソースグループ → リソース",
+    "リソースグループ → 管理グループ → サブスクリプション → リソース",
+    "管理グループ → リソースグループ → サブスクリプション → リソース",
+    "サブスクリプション → 管理グループ → リソースグループ → リソース"
+   ],
+   "answer": 0,
+   "explanation": "管理グループの下にサブスクリプションがあり、その下にリソースグループ、その中にリソースがあります。",
+   "topic": "リソースグループとサブスクリプションの階層",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "同じ構成の仮想マシンを、負荷に応じて自動的に増減させながら、まとめて管理するためのサービスはどれですか。",
+   "choices": [
+    "可用性セット",
+    "Azure Container Instances",
+    "Azure Virtual Desktop",
+    "Azure Virtual Machine Scale Sets"
+   ],
+   "answer": 3,
+   "explanation": "Virtual Machine Scale Sets は、同一構成の仮想マシンを、負荷に応じて自動的に増減できるサービスです。",
+   "topic": "仮想マシンのオプション",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "同じデータセンター内で、障害ドメインと更新ドメインに仮想マシンを分散して、障害やメンテナンスの影響を減らすための機能はどれですか。",
+   "choices": [
+    "可用性セット",
+    "リソースグループ",
+    "可用性ゾーン",
+    "リージョン ペア"
+   ],
+   "answer": 0,
+   "explanation": "可用性セットは、同じデータセンター内で、仮想マシンを複数の障害ドメインと更新ドメインに分散します。データセンターをまたぐ保護には、可用性ゾーンを使います。",
+   "topic": "仮想マシンのオプション",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "クラウド上で Windows のデスクトップ環境とアプリケーションを、さまざまな端末へ配信するサービスはどれですか。",
+   "choices": [
+    "Azure Container Instances",
+    "Azure Functions",
+    "Azure Virtual Desktop",
+    "Azure App Service"
+   ],
+   "answer": 2,
+   "explanation": "Azure Virtual Desktop は、デスクトップとアプリケーションを、場所や端末を問わず利用できるようにするサービスです。",
+   "topic": "仮想マシンのオプション",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure で仮想マシンを作成するときに、仮想マシンと合わせて構成が必要になる一般的なリソースの組み合わせはどれですか。",
+   "choices": [
+    "ExpressRoute 回線と VPN Gateway",
+    "Azure SQL Database と Azure Cosmos DB",
+    "Azure Key Vault と Azure Policy",
+    "ディスク、ネットワーク インターフェイス、仮想ネットワーク"
+   ],
+   "answer": 3,
+   "explanation": "仮想マシンには、OS ディスク、ネットワーク インターフェイス、仮想ネットワークが必要です。他の選択肢は、必須ではありません。",
+   "topic": "仮想マシンのオプション",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "多数のコンテナー化したアプリケーションのデプロイ、スケーリング、管理を自動化する、コンテナーのオーケストレーションを提供するサービスはどれですか。",
+   "choices": [
+    "Azure Virtual Machine Scale Sets",
+    "Azure Kubernetes Service（AKS）",
+    "Azure Container Instances",
+    "Azure Functions"
+   ],
+   "answer": 1,
+   "explanation": "AKS は、Kubernetes を使ったコンテナーのオーケストレーションを提供します。Azure Container Instances は、オーケストレーションなしで、コンテナーを単体で実行します。",
+   "topic": "コンピューティングの種類",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure DNS の役割として、正しいものはどれですか。",
+   "choices": [
+    "複数のサーバーに、受信トラフィックを分散する",
+    "DNS ドメインをホストして、名前解決を提供する",
+    "オンプレミスと Azure の間に、専用線を接続する",
+    "PaaS サービスへのプライベートな接続を提供する"
+   ],
+   "answer": 1,
+   "explanation": "Azure DNS は、DNS ドメインをホストし、Azure のインフラを使って名前解決を提供するサービスです。",
+   "topic": "仮想ネットワークとエンドポイント",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure のプライベート エンドポイントに割り当てられる IP アドレスは、どこから割り当てられますか。",
+   "choices": [
+    "DNS サーバーのアドレス範囲",
+    "仮想ネットワークのプライベート IP アドレスの範囲",
+    "パブリック IP アドレスの範囲",
+    "Microsoft のグローバルな IP アドレスのプール"
+   ],
+   "answer": 1,
+   "explanation": "プライベート エンドポイントは、仮想ネットワークのプライベート IP アドレスを使います。そのため、インターネットを経由せずに、サービスへ接続できます。",
+   "topic": "仮想ネットワークとエンドポイント",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "アプリケーションのコンポーネント間で、メッセージを格納して非同期にやり取りするために使う Azure のストレージサービスはどれですか。",
+   "choices": [
+    "Azure Blob Storage",
+    "Azure Table Storage",
+    "Azure Queue Storage",
+    "Azure Files"
+   ],
+   "answer": 2,
+   "explanation": "Queue Storage は、メッセージのキューを提供し、アプリケーション間で非同期にメッセージをやり取りできます。",
+   "topic": "Azure Storageサービス",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure のストレージアカウントの説明として、正しいものはどれですか。",
+   "choices": [
+    "Microsoft Entra ID のユーザーアカウントの一覧",
+    "仮想ネットワークの IP アドレスを管理する単位",
+    "仮想マシン専用のディスクだけを格納する場所",
+    "Blob、Files、Queue、Table などのデータサービスに共通の名前空間や設定を提供する、管理の単位"
+   ],
+   "answer": 3,
+   "explanation": "ストレージアカウントは、Azure Storage のデータサービスをまとめる管理の単位で、名前空間、冗長性、アクセス設定などを持ちます。",
+   "topic": "Azure Storageサービス",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ホット層とクール層の比較として、正しいものはどれですか。",
+   "choices": [
+    "ホット層はストレージの費用が高いが、アクセスの費用は低い",
+    "ホット層はストレージの費用が低いが、アクセスの費用は高い",
+    "クール層は、頻繁にアクセスするデータに向いている",
+    "どちらの層も、ストレージとアクセスの費用は同じである"
+   ],
+   "answer": 0,
+   "explanation": "ホット層は、頻繁にアクセスするデータ向けで、ストレージの費用は高めですが、アクセスの費用は低くなります。クール層は、その逆です。",
+   "topic": "ストレージ層と冗長性",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "単一のデータセンター内でデータを複製し、最も低いコストで保護する冗長性オプションはどれですか。",
+   "choices": [
+    "ゾーン冗長ストレージ（ZRS）",
+    "ローカル冗長ストレージ（LRS）",
+    "geo 冗長ストレージ（GRS）",
+    "geo ゾーン冗長ストレージ（GZRS）"
+   ],
+   "answer": 1,
+   "explanation": "LRS は、プライマリリージョンの単一のデータセンター内で、データを複製します。最もコストが低い一方で、データセンター全体の障害には耐えられません。",
+   "topic": "ストレージ層と冗長性",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "プライマリリージョンで LRS と同様に複製したうえで、離れたセカンダリリージョンにも複製する冗長性オプションはどれですか。",
+   "choices": [
+    "geo 冗長ストレージ（GRS）",
+    "ローカル冗長ストレージ（LRS）",
+    "geo ゾーン冗長ストレージ（GZRS）",
+    "ゾーン冗長ストレージ（ZRS）"
+   ],
+   "answer": 0,
+   "explanation": "GRS は、プライマリリージョンで LRS と同様に複製し、さらに離れたセカンダリリージョンへ複製します。GZRS は、プライマリリージョンで ZRS を使います。",
+   "topic": "ストレージ層と冗長性",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "オンプレミスの Windows ファイルサーバーを残しながら、Azure Files と同期して、キャッシュとして使うためのサービスはどれですか。",
+   "choices": [
+    "AzCopy",
+    "Azure File Sync",
+    "Azure Data Box",
+    "Azure Migrate"
+   ],
+   "answer": 1,
+   "explanation": "Azure File Sync は、オンプレミスのファイルサーバーを、Azure Files のキャッシュとして使えるようにします。",
+   "topic": "ファイル移動と移行ツール",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "グラフィカルな画面で、Azure Storage のデータを管理できる、クライアントアプリケーションはどれですか。",
+   "choices": [
+    "Azure Storage Explorer",
+    "AzCopy",
+    "Azure Data Box",
+    "Azure Migrate"
+   ],
+   "answer": 0,
+   "explanation": "Azure Storage Explorer は、GUI でストレージのデータを管理できるアプリです。AzCopy は、コマンドラインのツールです。",
+   "topic": "ファイル移動と移行ツール",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ドメインコントローラーを自分で運用せずに、ドメイン参加、グループポリシー、LDAP、Kerberos を必要とするアプリを使うための Azure のサービスはどれですか。",
+   "choices": [
+    "Microsoft Entra 条件付きアクセス",
+    "Azure RBAC",
+    "Microsoft Entra Domain Services",
+    "Azure Policy"
+   ],
+   "answer": 2,
+   "explanation": "Microsoft Entra Domain Services は、マネージドなドメインサービスを提供し、従来の Active Directory を必要とするアプリを使えるようにします。",
+   "topic": "Microsoft Entra ID",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "一度サインインすれば、複数のアプリケーションに、再度サインインせずにアクセスできるようにする仕組みはどれですか。",
+   "choices": [
+    "パスワードレス認証",
+    "シングル サインオン（SSO）",
+    "多要素認証（MFA）",
+    "条件付きアクセス"
+   ],
+   "answer": 1,
+   "explanation": "SSO を使うと、1回のサインインで、複数のアプリやサービスにアクセスできます。",
+   "topic": "認証方法と条件付きアクセス",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ゼロ トラストの原則に含まれないものはどれですか。",
+   "choices": [
+    "最小限の特権でアクセスさせる",
+    "社内ネットワークからの通信は、常に信頼する",
+    "明示的に検証する",
+    "侵害されていることを想定する"
+   ],
+   "answer": 1,
+   "explanation": "ゼロ トラストでは、ネットワークの場所にかかわらず、すべてを検証します。社内からの通信だからという理由では、信頼しません。",
+   "topic": "ゼロトラストと多層防御",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure RBAC のロールを、サブスクリプションのスコープで割り当てた場合の動作として、正しいものはどれですか。",
+   "choices": [
+    "別のサブスクリプションのリソースにも適用される",
+    "配下のリソースグループとリソースに継承される",
+    "最初に作成したリソースグループにのみ適用される",
+    "そのサブスクリプション自体にのみ適用され、配下には適用されない"
+   ],
+   "answer": 1,
+   "explanation": "RBAC のロール割り当ては、スコープの配下に継承されます。サブスクリプションで割り当てると、配下のリソースグループとリソースに適用されます。",
+   "topic": "RBAC",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リソースの作成や管理はできるが、ほかのユーザーへアクセス権を付与することはできない、Azure の組み込みロールはどれですか。",
+   "choices": [
+    "所有者（Owner）",
+    "閲覧者（Reader）",
+    "共同作成者（Contributor）",
+    "ユーザー アクセス管理者（User Access Administrator）"
+   ],
+   "answer": 2,
+   "explanation": "共同作成者は、リソースの作成と管理ができますが、アクセス権の付与はできません。アクセス権を付与できるのは、所有者などです。",
+   "topic": "RBAC",
+   "volatile": false,
+   "createdAt": "2026-11-09"
   }
  ]
 }
