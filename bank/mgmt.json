@@ -78,7 +78,7 @@
     "Azure portal と Azure Service Health",
     "Microsoft Purview と Azure Policy",
     "Azure Bicep と Azure Resource Manager テンプレート",
-    "Azure Cost Management と 料金計算ツール"
+    "Microsoft Cost Management と 料金計算ツール"
    ],
    "answer": 2,
    "explanation": "Azure BicepおよびAzure Resource Manager（ARM）テンプレートは、宣言型の構文を用いてAzureリソースの構成をコードとして定義・デプロイするための代表的なIaCツールです。他の選択肢はガバナンス、監視、コスト管理などのサービスです。",
@@ -92,7 +92,7 @@
     "Azure Policy",
     "Azure Advisor",
     "Microsoft Purview",
-    "Azure Cost Management"
+    "Microsoft Cost Management"
    ],
    "answer": 0,
    "explanation": "Azure Policyを使用すると、組織のルールやコンプライアンス要件を適用できます。たとえば「許可された場所」という組み込みポリシーを割り当てることで、指定したリージョン以外でのリソース作成を制限・ブロックすることが可能です。",
@@ -119,7 +119,7 @@
    "choices": [
     "Azure Monitor",
     "Azure Policy",
-    "Azure Cost Management",
+    "Microsoft Cost Management",
     "Microsoft Purview"
    ],
    "answer": 3,
@@ -173,7 +173,7 @@
   {
    "q": "管理者が、自社が利用している特定のAzureリージョンやサービスで現在進行中の障害情報や、今後予定されているメンテナンスの通知を確認したいと考えています。最も適切なサービスはどれですか。",
    "choices": [
-    "Azure Cost Management",
+    "Microsoft Cost Management",
     "Azure Policy",
     "Azure Advisor",
     "Azure Service Health"
@@ -204,7 +204,7 @@
     "料金計算ツール（Pricing Calculator）",
     "Azure Advisor",
     "総保有コスト（TCO）計算ツール",
-    "Azure Cost Management"
+    "Microsoft Cost Management"
    ],
    "answer": 0,
    "explanation": "料金計算ツール（Pricing Calculator）は、必要なAzure製品や構成（VMのスペック、ストレージ容量、リージョンなど）を選択して入力することで、Azure導入時の予想月額コストを見積もるためのツールです。",
@@ -232,11 +232,11 @@
     "Azure Service Health",
     "料金計算ツール",
     "Azure Arc",
-    "Azure Cost Management"
+    "Microsoft Cost Management"
    ],
    "answer": 3,
-   "explanation": "Azure Cost Managementでは、コストの可視化や分析に加えて「予算」を作成できます。設定した予算額やその一定割合に実際の支出（または予測支出）が達した際に、アラートを自動で送信するよう構成できます。",
-   "topic": "Azure Cost Management",
+   "explanation": "Microsoft Cost Managementでは、コストの可視化や分析に加えて「予算」を作成できます。設定した予算額やその一定割合に実際の支出（または予測支出）が達した際に、アラートを自動で送信するよう構成できます。",
+   "topic": "Microsoft Cost Management",
    "volatile": false,
    "createdAt": "2026-11-09"
   },
@@ -269,7 +269,7 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "部署ごとやリソースグループごとに、これまでの支出を分類して確認したい場合に使う Azure Cost Management の機能はどれですか。",
+   "q": "部署ごとやリソースグループごとに、これまでの支出を分類して確認したい場合に使う Microsoft Cost Management の機能はどれですか。",
    "choices": [
     "Azure Monitor の診断設定",
     "コスト分析（Cost Analysis）",
@@ -278,12 +278,12 @@
    ],
    "answer": 1,
    "explanation": "コスト分析では、リソースグループ、タグ、サービスなどの単位で支出を集計し、グラフで確認できます。他の3つは、コストの集計とは別の目的の機能です。",
-   "topic": "Azure Cost Management",
+   "topic": "Microsoft Cost Management",
    "volatile": false,
    "createdAt": "2026-11-09"
   },
   {
-   "q": "Azure Cost Management の予算について、正しい説明はどれですか。",
+   "q": "Microsoft Cost Management の予算について、正しい説明はどれですか。",
    "choices": [
     "予算を設定すると、支出が予算を超えることは絶対にない",
     "予算は Azure portal からは設定できず、Azure CLI からのみ設定できる",
@@ -292,7 +292,7 @@
    ],
    "answer": 3,
    "explanation": "予算は、支出がしきい値に近づいたときの通知などに使います。設定しただけでは、リソースの停止や削除は行われません。",
-   "topic": "Azure Cost Management",
+   "topic": "Microsoft Cost Management",
    "volatile": false,
    "createdAt": "2026-11-09"
   },
@@ -539,7 +539,7 @@
    "choices": [
     "Azure Policy の準拠率",
     "Azure Service Health の正常性履歴",
-    "Azure Cost Management の予算",
+    "Microsoft Cost Management の予算",
     "Advisor スコア"
    ],
    "answer": 3,
@@ -566,7 +566,7 @@
    "q": "特定の仮想マシンなど、個別のリソースの正常性を確認し、問題の原因が Azure 側にあるかを把握するために使うものはどれですか。",
    "choices": [
     "Azure status",
-    "Azure Cost Management",
+    "Microsoft Cost Management",
     "Resource Health",
     "Azure Policy"
    ],
@@ -582,7 +582,7 @@
     "Resource Health",
     "Azure Advisor",
     "Azure status",
-    "Azure Cost Management"
+    "Microsoft Cost Management"
    ],
    "answer": 2,
    "explanation": "Azure status は、全世界の Azure サービスの状態を示す公開ページです。自分が使っているサービスに絞った情報は、Azure Service Health で確認します。",
@@ -623,7 +623,7 @@
    "choices": [
     "Application Insights",
     "Azure Arc",
-    "Azure Cost Management",
+    "Microsoft Cost Management",
     "Azure Service Health"
    ],
    "answer": 0,

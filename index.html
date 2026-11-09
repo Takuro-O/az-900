@@ -500,7 +500,7 @@
     { id: 'arch',   icon: '🏗️', name: 'Azure のアーキテクチャとサービス', sub: 'リージョン・VM・ストレージ', areas: ['コアなアーキテクチャコンポーネント','コンピューティングとネットワーク','ストレージ','ID・アクセス・セキュリティ'],
       topics: ['リージョンとリージョンペア', '可用性ゾーンとデータセンター', 'リソースグループとサブスクリプションの階層', 'コンピューティングの種類', '仮想マシンのオプション', 'アプリケーションホスティング', '仮想ネットワークとエンドポイント', 'VPN GatewayとExpressRoute', 'Azure Storageサービス', 'ストレージ層と冗長性', 'ファイル移動と移行ツール', 'Microsoft Entra ID', '認証方法と条件付きアクセス', 'RBAC', 'ゼロトラストと多層防御', 'Microsoft Defender for Cloud'] },
     { id: 'mgmt',   icon: '🛠️', name: 'Azure の管理とガバナンス', sub: 'コスト・ガバナンス・監視', areas: ['コスト管理','ガバナンスとコンプライアンス','リソースの管理とデプロイ','監視'],
-      topics: ['コストに影響する要因', '料金計算ツール', 'Azure Cost Management', 'タグ', 'Microsoft Purview', 'Azure Policy', 'リソースロック', 'Azure portal', 'Cloud Shell・Azure CLI・PowerShell', 'Azure Arc', 'コードとしてのインフラストラクチャ', 'ARMとARMテンプレート', 'Azure Advisor', 'Azure Service Health', 'Azure Monitor'] },
+      topics: ['コストに影響する要因', '料金計算ツール', 'Microsoft Cost Management', 'タグ', 'Microsoft Purview', 'Azure Policy', 'リソースロック', 'Azure portal', 'Cloud Shell・Azure CLI・PowerShell', 'Azure Arc', 'コードとしてのインフラストラクチャ', 'ARMとARMテンプレート', 'Azure Advisor', 'Azure Service Health', 'Azure Monitor'] },
   ];
 
   // ── 表記統一：テーマ名・選択肢の正規化 ──────────────
@@ -510,7 +510,7 @@
     'ARM': 'ARMとARMテンプレート', 'ARMテンプレート': 'ARMとARMテンプレート', 'Azure Resource Manager': 'ARMとARMテンプレート',
     'Entra ID': 'Microsoft Entra ID', 'Microsoft Entra': 'Microsoft Entra ID', 'Azure RBAC': 'RBAC', 'ロールベースのアクセス制御': 'RBAC',
     'Defender for Cloud': 'Microsoft Defender for Cloud', 'Purview': 'Microsoft Purview', 'Azure Purview': 'Microsoft Purview',
-    'Cost Management': 'Azure Cost Management', 'Azure Portal': 'Azure portal', 'Azureポータル': 'Azure portal',
+    'Cost Management': 'Microsoft Cost Management', 'Azure Cost Management': 'Microsoft Cost Management', 'Azure Portal': 'Azure portal', 'Azureポータル': 'Azure portal',
     'Cloud Shell': 'Cloud Shell・Azure CLI・PowerShell', 'Azure Cloud Shell': 'Cloud Shell・Azure CLI・PowerShell',
     'Azure CLI': 'Cloud Shell・Azure CLI・PowerShell', 'Azure PowerShell': 'Cloud Shell・Azure CLI・PowerShell',
     'ゼロトラスト': 'ゼロトラストと多層防御', '多層防御': 'ゼロトラストと多層防御', '責任共有モデル': '共同責任モデル',
@@ -1506,7 +1506,7 @@ ${planBlock}${avoidBlock}【良問の条件】
 
   // ── 生成問題の検証・正規化（不正な問題は null → 除外） ──
   // 旧名称（改称済み）。問題文・選択肢（ひっかけ含む）に使われた問題は捨てる。
-  const OLD_NAME_RE = /Azure\s*Active\s*Directory|Azure\s*AD(?![A-Za-z])|\bAAD\b|Azure\s*Sentinel|Azure\s*Security\s*Center|Azure\s*Defender|Azure\s*Information\s*Protection|Azure\s*Purview|Azure\s*Advanced\s*Threat\s*Protection/i;
+  const OLD_NAME_RE = /Azure\s*Active\s*Directory|Azure\s*AD(?![A-Za-z])|\bAAD\b|Azure\s*Sentinel|Azure\s*Security\s*Center|Azure\s*Defender|Azure\s*Information\s*Protection|Azure\s*Purview|Azure\s*Advanced\s*Threat\s*Protection|Azure\s*Cost\s*Management/i;
   function normalizeQuestion(raw, field, useSource) {
     if (!raw || typeof raw !== 'object') return null;
     const q = typeof raw.q === 'string' ? raw.q.trim() : '';

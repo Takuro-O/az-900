@@ -30,11 +30,11 @@ ok(sentPrompt.includes('同じ題材・同じ場面')&&sentPrompt.includes('「�
  // 6,7問目相当は別フィールドで確認するため、直接 unify を履歴移行テストで検証
  // ── 既存履歴の移行（読み込み時に正規化） → 苦手テーマで1件に集約
  const mk=(id,t,r)=>({id,date:new Date().toISOString(),field:'mgmt',fieldName:'Azure の管理とガバナンス',fieldIcon:'💰',count:1,correct:r?1:0,questions:[{q:'q',choices:['a','b','c','d'],answer:0,explanation:'e',topic:t,userAnswer:r?0:1,isRight:r}]});
- const hist=[mk('1','Cost Management',false),mk('2','Azure Cost Management (CM)',false),mk('3','Azure Cost Management',true),mk('4','Azure Portalについて',false),mk('5','Ａｚｕｒｅ　Ｐｏｒｔａｌ',false),mk('6','Azure Policyの基礎',true),mk('7','Azure Policy',true)];
+ const hist=[mk('1','Cost Management',false),mk('2','Azure Cost Management (CM)',false),mk('3','Microsoft Cost Management',true),mk('4','Azure Portalについて',false),mk('5','Ａｚｕｒｅ　Ｐｏｒｔａｌ',false),mk('6','Azure Policyの基礎',true),mk('7','Azure Policy',true)];
  w=boot({az900_quiz_v1:JSON.stringify({history:hist,totalAnswered:7,totalCorrect:3})},false);await wait(200);d=w.document;$=s=>d.querySelector(s);
  w.showPage('stats');
  const txt=$('#topic-stats').textContent.replace(/\s+/g,' ');
- ok((txt.match(/Azure Cost Management/g)||[]).length===1&&/3問中1問|1 \/ 3問/.test(txt),'3 variants of Azure Cost Management merged into one row: '+txt.slice(0,90));
+ ok((txt.match(/Microsoft Cost Management/g)||[]).length===1&&/3問中1問|1 \/ 3問/.test(txt),'3 variants of Microsoft Cost Management merged into one row: '+txt.slice(0,90));
  ok(/Azure portal/.test(txt)&&!/Azure Portal/.test(txt),'Azure portal unified (incl. full-width letters)');
  ok((txt.match(/Azure Policy/g)||[]).length===0||true,'(Azure Policy is 100% → hidden from weak list)');
  // ── 冪等性：2回目の読み込みで変化しない
