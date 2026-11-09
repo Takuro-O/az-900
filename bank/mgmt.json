@@ -239,6 +239,468 @@
    "topic": "Azure Cost Management",
    "volatile": false,
    "createdAt": "2026-11-09"
+  },
+  {
+   "q": "同じ仕様の仮想マシンを、別の国のリージョンへ移してデプロイしたところ、料金が変わりました。この料金の違いにもっとも直接関係する要因はどれですか。",
+   "choices": [
+    "リソースを作成した管理者のロール",
+    "リソースに付けたタグの値",
+    "リソースをデプロイするリージョン",
+    "リソースグループの名前"
+   ],
+   "answer": 2,
+   "explanation": "Azure の料金は、リソースの種類や使用量に加えて、デプロイするリージョンによっても変わります。リージョンごとに提供コストなどの条件が異なるためです。リソースグループ名、ロール、タグの値は料金に影響しません。",
+   "topic": "コストに影響する要因",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "クラウドへの移行で、会社の支出の考え方が変わります。資本支出（CapEx）と運用支出（OpEx）の説明として正しいものはどれですか。",
+   "choices": [
+    "CapEx は使った分だけ支払う支出で、OpEx は物理インフラなどの資産への先行投資である",
+    "CapEx は物理インフラなどの資産への先行投資で、OpEx はサービスを使った分だけ支払う支出である",
+    "CapEx は人件費のことで、OpEx はハードウェアの購入費のことである",
+    "CapEx と OpEx はどちらも、契約時にまとめて前払いする費用である"
+   ],
+   "answer": 1,
+   "explanation": "CapEx（資本支出）はサーバーなどの資産に先行して投資する支出、OpEx（運用支出）は使った分だけ支払う支出です。クラウドは従量課金が基本なので、OpEx の考え方が中心になります。",
+   "topic": "コストに影響する要因",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "部署ごとやリソースグループごとに、これまでの支出を分類して確認したい場合に使う Azure Cost Management の機能はどれですか。",
+   "choices": [
+    "Azure Monitor の診断設定",
+    "コスト分析（Cost Analysis）",
+    "Azure Service Health の正常性履歴",
+    "Azure Policy の準拠状態"
+   ],
+   "answer": 1,
+   "explanation": "コスト分析では、リソースグループ、タグ、サービスなどの単位で支出を集計し、グラフで確認できます。他の3つは、コストの集計とは別の目的の機能です。",
+   "topic": "Azure Cost Management",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Cost Management の予算について、正しい説明はどれですか。",
+   "choices": [
+    "予算を設定すると、支出が予算を超えることは絶対にない",
+    "予算は Azure portal からは設定できず、Azure CLI からのみ設定できる",
+    "予算に達すると、すべてのリソースが自動的に削除される",
+    "しきい値を超えたときに通知などを実行できるが、既定ではリソースの利用を自動で止めない"
+   ],
+   "answer": 3,
+   "explanation": "予算は、支出がしきい値に近づいたときの通知などに使います。設定しただけでは、リソースの停止や削除は行われません。",
+   "topic": "Azure Cost Management",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リソースグループにタグを付けた場合の動作として、正しいものはどれですか。",
+   "choices": [
+    "リソースグループにはタグを付けられない",
+    "既定では、リソースグループのタグは、その中のリソースに継承されない",
+    "リソースグループのタグを変更すると、中のリソースが削除される",
+    "リソースグループのタグは、常にその中のすべてのリソースへ自動的に継承される"
+   ],
+   "answer": 1,
+   "explanation": "タグはリソースグループにも付けられますが、既定ではその中のリソースに継承されません。継承や付与を徹底したい場合は、Azure Policy などを使います。",
+   "topic": "タグ",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Policy と Azure RBAC の違いとして、正しいものはどれですか。",
+   "choices": [
+    "Azure Policy は料金を計算し、Azure RBAC は請求書を発行する",
+    "Azure Policy はユーザーに許可する操作を制御し、Azure RBAC はリソースがルールに準拠しているかを評価する",
+    "Azure Policy はリソースがルールに準拠しているかを評価・強制し、Azure RBAC はユーザーに許可する操作を制御する",
+    "Azure Policy と Azure RBAC は同じ機能で、名前が違うだけである"
+   ],
+   "answer": 2,
+   "explanation": "Azure Policy は「リソースがどうあるべきか」のルールを扱い、Azure RBAC は「誰が何をできるか」を扱います。目的が違うため、組み合わせて使います。",
+   "topic": "Azure Policy",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "関連する複数のポリシー定義をひとまとめにして、まとめて割り当てたい場合に使うものはどれですか。",
+   "choices": [
+    "タグ",
+    "リソースロック",
+    "ポリシーイニシアチブ（Policy initiative）",
+    "管理グループ"
+   ],
+   "answer": 2,
+   "explanation": "イニシアチブ（イニシアチブ定義）は、関連する複数のポリシー定義をグループ化し、1つの単位として割り当てられるようにしたものです。",
+   "topic": "Azure Policy",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "管理グループに Azure Policy を割り当てた場合の動作として、正しいものはどれですか。",
+   "choices": [
+    "管理グループに属する最初のサブスクリプションにだけ適用される",
+    "配下のサブスクリプション、リソースグループ、リソースにも適用される",
+    "その管理グループ自体にだけ適用され、配下には適用されない",
+    "配下のリソースを削除するまで適用されない"
+   ],
+   "answer": 1,
+   "explanation": "ポリシーの割り当ては、割り当てたスコープの配下に継承されます。上位のスコープで割り当てると、まとめてルールを適用できます。",
+   "topic": "Azure Policy",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Policy で、ルールに違反するリソースの作成や更新を拒否したい場合に使う効果はどれですか。",
+   "choices": [
+    "Audit",
+    "Deny",
+    "Disabled",
+    "Modify"
+   ],
+   "answer": 1,
+   "explanation": "Deny は、ルールに違反する要求を拒否します。Audit は違反を記録するだけで、リソースの作成は止めません。Modify はタグなどを追加・変更する効果です。",
+   "topic": "Azure Policy",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リソースロックの ReadOnly を設定したリソースの動作として、正しいものはどれですか。",
+   "choices": [
+    "承認されたユーザーであっても、リソースの読み取りもできなくなる",
+    "削除だけが禁止され、変更は自由にできる",
+    "承認されたユーザーであっても、変更や削除はできず、読み取りだけができる",
+    "承認されたユーザーは、変更も削除も自由にできる"
+   ],
+   "answer": 2,
+   "explanation": "ReadOnly ロックは、読み取りだけを許可します。削除だけを禁止するのは CanNotDelete ロックです。ロックは、RBAC で権限のあるユーザーにも効きます。",
+   "topic": "リソースロック",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リソースグループにロックを設定した場合の動作として、正しいものはどれですか。",
+   "choices": [
+    "そのリソースグループ内の既存のリソースと、後から追加されるリソースに、ロックが継承される",
+    "別のサブスクリプションのリソースにも自動的に適用される",
+    "作成済みのリソースにだけ適用され、後から追加したリソースには適用されない",
+    "そのリソースグループ自体にだけ適用され、中のリソースには適用されない"
+   ],
+   "answer": 0,
+   "explanation": "ロックは、設定したスコープの配下に継承されます。リソースグループにロックを設定すると、後から追加したリソースにも適用されます。",
+   "topic": "リソースロック",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "複数のリソースの状態やグラフを、ひとつの画面にまとめて表示したい場合に、Azure portal で使える機能はどれですか。",
+   "choices": [
+    "ダッシュボード",
+    "ARM テンプレート",
+    "リソースロック",
+    "Azure Policy"
+   ],
+   "answer": 0,
+   "explanation": "Azure portal のダッシュボードは、よく使うリソースや監視グラフを並べて表示できる、カスタマイズ可能な画面です。",
+   "topic": "Azure portal",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Cloud Shell で選べるシェル環境の組み合わせはどれですか。",
+   "choices": [
+    "Bash と PowerShell",
+    "コマンド プロンプトと PowerShell",
+    "PowerShell と Python",
+    "Bash と Zsh"
+   ],
+   "answer": 0,
+   "explanation": "Cloud Shell では、Bash と PowerShell のどちらかを選んで使えます。",
+   "topic": "Cloud Shell・Azure CLI・PowerShell",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Cloud Shell で、セッションをまたいでファイルを保持するために、既定で使われる Azure のストレージはどれですか。",
+   "choices": [
+    "Azure Table Storage",
+    "Azure Files の共有",
+    "Azure Data Box",
+    "Azure Queue Storage"
+   ],
+   "answer": 1,
+   "explanation": "Cloud Shell は、ファイルを保存するために Azure Files の共有を使います。これにより、次回のセッションでもファイルを使えます。",
+   "topic": "Cloud Shell・Azure CLI・PowerShell",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure portal にサインインした状態で Azure Cloud Shell を開いたときの認証について、正しいものはどれですか。",
+   "choices": [
+    "ローカルのコンピューターに Azure CLI をインストールしないと使えない",
+    "サインインしているアカウントで、自動的に認証される",
+    "認証は不要で、サインインしていないユーザーも Azure リソースを操作できる",
+    "毎回、サービスプリンシパルの証明書を手動で登録する必要がある"
+   ],
+   "answer": 1,
+   "explanation": "Cloud Shell は、サインイン中のアカウントで自動的に認証されます。ローカルに環境を用意する必要もありません。",
+   "topic": "Cloud Shell・Azure CLI・PowerShell",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Arc で、Azure の外にあるサーバーを Azure から管理できるようにすると、何ができるようになりますか。",
+   "choices": [
+    "サーバーのハードウェアが、自動的に Azure のデータセンターの機器に置き換わる",
+    "サーバーのすべてのデータが、自動的に Azure へ移行される",
+    "サーバーの OS が、自動的に Windows Server へ変更される",
+    "Azure のリソースと同じように、タグ付け、Azure Policy、RBAC を使って管理できる"
+   ],
+   "answer": 3,
+   "explanation": "Azure Arc は、オンプレミスや他社クラウドのリソースを Azure に接続し、Azure のリソースのように管理できるようにします。移行や置き換えを行うものではありません。",
+   "topic": "Azure Arc",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Arc に関する説明として、誤っているものはどれですか。",
+   "choices": [
+    "Kubernetes クラスターを Azure から管理できる",
+    "他社クラウド上のサーバーを Azure から管理できる",
+    "オンプレミスのサーバーを Azure から管理できる",
+    "Azure Arc を使うには、管理対象のサーバーをすべて Azure へ移行する必要がある"
+   ],
+   "answer": 3,
+   "explanation": "Azure Arc は、リソースを移行せずに、今ある場所のまま Azure から管理するためのサービスです。",
+   "topic": "Azure Arc",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "IaC の「宣言型」のアプローチの説明として、正しいものはどれですか。",
+   "choices": [
+    "環境を Azure portal で手動で作成し、その手順を文書にする",
+    "目的の最終的な状態を記述し、そこに至る手順はツールが決める",
+    "リソースの料金を事前に見積もるための表を作る",
+    "実行する手順を1つずつ順番に記述し、実行順序を利用者が管理する"
+   ],
+   "answer": 1,
+   "explanation": "宣言型は「どうなっていてほしいか」を書く方式で、ARM テンプレートや Bicep が該当します。手順を書く方式は命令型です。",
+   "topic": "コードとしてのインフラストラクチャ",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "IaC のコードをソース管理に保存することの利点として、適切なものはどれですか。",
+   "choices": [
+    "変更履歴の追跡やレビューができ、以前の構成に戻しやすくなる",
+    "環境の変更に、Azure の承認が不要になる",
+    "リソースの利用料金が、自動的に無料になる",
+    "手動での構成変更が、技術的にできなくなる"
+   ],
+   "answer": 0,
+   "explanation": "インフラをコードで管理すると、アプリのコードと同じように変更履歴の管理やレビューができ、問題があれば前の状態へ戻しやすくなります。",
+   "topic": "コードとしてのインフラストラクチャ",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure portal、Azure CLI、PowerShell など、どの管理ツールから操作しても、リソースの作成・更新・削除の要求を受け付ける Azure の管理レイヤーはどれですか。",
+   "choices": [
+    "Azure Advisor",
+    "Azure Monitor",
+    "Azure Resource Manager",
+    "Azure Arc"
+   ],
+   "answer": 2,
+   "explanation": "Azure Resource Manager（ARM）は Azure の管理レイヤーで、どのツールからの要求も受け付け、認証・認可を行ってから処理します。",
+   "topic": "ARMとARMテンプレート",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "同じ ARM テンプレートを、同じ設定で繰り返しデプロイしたときの動作として、正しいものはどれですか。",
+   "choices": [
+    "テンプレートは1回しか使えない",
+    "2回目以降のデプロイは必ず失敗する",
+    "毎回、同じ最終状態になる（冪等である）",
+    "デプロイのたびに、同じリソースが重複して作成される"
+   ],
+   "answer": 2,
+   "explanation": "ARM テンプレートのデプロイは冪等で、繰り返し実行しても同じ最終状態になります。",
+   "topic": "ARMとARMテンプレート",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Advisor の推奨事項を、どれだけ実施できているかを数値で把握できる機能はどれですか。",
+   "choices": [
+    "Azure Policy の準拠率",
+    "Azure Service Health の正常性履歴",
+    "Azure Cost Management の予算",
+    "Advisor スコア"
+   ],
+   "answer": 3,
+   "explanation": "Advisor スコアは、カテゴリごとの推奨事項への対応状況を数値で示します。対応を進めると、スコアが上がります。",
+   "topic": "Azure Advisor",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Advisor の推奨事項のうち、可用性ゾーンの利用など、重要なアプリケーションの継続性を高める提案を含むカテゴリはどれですか。",
+   "choices": [
+    "コスト",
+    "パフォーマンス",
+    "オペレーショナル エクセレンス",
+    "信頼性（Reliability）"
+   ],
+   "answer": 3,
+   "explanation": "Azure Advisor の推奨事項は、信頼性、セキュリティ、パフォーマンス、コスト、オペレーショナル エクセレンスの5つに分類されます。継続性に関するものは「信頼性」です。",
+   "topic": "Azure Advisor",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "特定の仮想マシンなど、個別のリソースの正常性を確認し、問題の原因が Azure 側にあるかを把握するために使うものはどれですか。",
+   "choices": [
+    "Azure status",
+    "Azure Cost Management",
+    "Resource Health",
+    "Azure Policy"
+   ],
+   "answer": 2,
+   "explanation": "Resource Health は、個別のリソースの正常性を示します。Azure Service Health は、利用している Azure のサービスやリージョンに関する情報を示します。",
+   "topic": "Azure Service Health",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "サインインしなくても見られる、全世界の Azure サービスの状態を示す公開ページはどれですか。",
+   "choices": [
+    "Resource Health",
+    "Azure Advisor",
+    "Azure status",
+    "Azure Cost Management"
+   ],
+   "answer": 2,
+   "explanation": "Azure status は、全世界の Azure サービスの状態を示す公開ページです。自分が使っているサービスに絞った情報は、Azure Service Health で確認します。",
+   "topic": "Azure Service Health",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Service Health が通知する情報として、適切なものはどれですか。",
+   "choices": [
+    "ユーザーのサインイン失敗とパスワードの変更履歴",
+    "リソースの利用料金の予測と予算の超過",
+    "請求書の発行、支払い期限、割引の適用結果",
+    "サービスの問題、計画メンテナンス、ヘルス アドバイザリ"
+   ],
+   "answer": 3,
+   "explanation": "Azure Service Health は、利用している Azure のサービスやリージョンに影響する、サービスの問題、計画メンテナンス、ヘルス アドバイザリを通知します。",
+   "topic": "Azure Service Health",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Monitor で収集したログを、クエリ言語（KQL）で検索・分析するために使う場所はどれですか。",
+   "choices": [
+    "Log Analytics ワークスペース",
+    "リソースロック",
+    "Azure Advisor",
+    "Azure の料金計算ツール"
+   ],
+   "answer": 0,
+   "explanation": "Azure Monitor のログは Log Analytics ワークスペースに保存され、KQL（Kusto Query Language）で分析できます。",
+   "topic": "Azure Monitor",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Web アプリケーションの応答時間や失敗率を監視して、パフォーマンスの問題を調べたい場合に使う Azure Monitor の機能はどれですか。",
+   "choices": [
+    "Application Insights",
+    "Azure Arc",
+    "Azure Cost Management",
+    "Azure Service Health"
+   ],
+   "answer": 0,
+   "explanation": "Application Insights は、アプリケーションの応答時間、失敗率、依存関係などを監視する、Azure Monitor の機能です。",
+   "topic": "Azure Monitor",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Monitor でアラートが発生したときに、通知先（メールや SMS など）や実行する動作をまとめて定義したものはどれですか。",
+   "choices": [
+    "リソースグループ",
+    "アクション グループ",
+    "管理グループ",
+    "ポリシーイニシアチブ"
+   ],
+   "answer": 1,
+   "explanation": "アクション グループは、アラートが発生したときに通知や動作を実行する宛先をまとめた設定です。",
+   "topic": "Azure Monitor",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Monitor で監視できる範囲として、正しいものはどれですか。",
+   "choices": [
+    "課金データだけを監視できる",
+    "Azure のリソースだけでなく、オンプレミスや他社クラウドのリソースからもデータを収集できる",
+    "Azure 上の仮想マシンだけを監視できる",
+    "Azure portal へのサインイン履歴だけを監視できる"
+   ],
+   "answer": 1,
+   "explanation": "Azure Monitor は、Azure のリソースに加えて、オンプレミスや他のクラウドのリソースからもデータを収集できます。",
+   "topic": "Azure Monitor",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Azure Monitor のメトリックの特徴として、適切なものはどれですか。",
+   "choices": [
+    "主にテキスト形式のイベント記録で、詳細な調査には向くが、数値の傾向把握には向かない",
+    "手動で入力したデータだけを保存する",
+    "一定間隔で収集される数値データで、CPU 使用率などの傾向を、ほぼリアルタイムで把握するのに向く",
+    "請求に関する情報だけを記録する"
+   ],
+   "answer": 2,
+   "explanation": "メトリックは、CPU 使用率のような数値を一定間隔で収集します。軽量で、ほぼリアルタイムの傾向把握に向きます。詳細な記録は、ログで確認します。",
+   "topic": "Azure Monitor",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "1年や3年といった一定期間の利用を約束することで、従量課金より割引を受けられる仕組みはどれですか。",
+   "choices": [
+    "Azure Reservations（予約）",
+    "Azure リソースロック",
+    "Azure Spot Virtual Machines",
+    "Azure Hybrid Benefit"
+   ],
+   "answer": 0,
+   "explanation": "Azure Reservations は、一定期間の利用を約束することで、従量課金より安く使える仕組みです。Azure Hybrid Benefit は、既存のライセンスを使ってコストを下げる特典です。",
+   "topic": "コストに影響する要因",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "オンプレミスで購入済みの Windows Server のライセンスを Azure の仮想マシンに使って、コストを下げる特典はどれですか。",
+   "choices": [
+    "Azure Policy",
+    "Azure Reservations",
+    "Azure Hybrid Benefit",
+    "Azure Advisor"
+   ],
+   "answer": 2,
+   "explanation": "Azure Hybrid Benefit は、条件を満たす既存のライセンスを Azure で使えるようにして、コストを下げる特典です。",
+   "topic": "コストに影響する要因",
+   "volatile": false,
+   "createdAt": "2026-11-09"
   }
  ]
 }
