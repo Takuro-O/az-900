@@ -577,7 +577,7 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "サインインしなくても見られる、全世界の Azure サービスの状態を示す公開ページはどれですか。",
+   "q": "すべての Azure リージョンの全 Azure サービスの正常性を示す、グローバルなビューはどれですか。",
    "choices": [
     "Resource Health",
     "Azure Advisor",
@@ -585,7 +585,7 @@
     "Microsoft Cost Management"
    ],
    "answer": 2,
-   "explanation": "Azure status は、全世界の Azure サービスの状態を示す公開ページです。自分が使っているサービスに絞った情報は、Azure Service Health で確認します。",
+   "explanation": "Azure status（Azure の状態）は、すべてのリージョンの全 Azure サービスの正常性を示すグローバルなビューで、広範囲に影響するインシデントが対象です。自分が使っているサービスやリージョンに絞った情報は、Azure Service Health で確認します。",
    "topic": "Azure Service Health",
    "volatile": false,
    "createdAt": "2026-11-09"
