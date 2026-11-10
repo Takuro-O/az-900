@@ -213,7 +213,7 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "Azure Monitorが収集するデータの主要な2つのタイプとして、正しいものはどれですか。",
+   "q": "Azure Monitor が収集するデータの種類に含まれる組み合わせとして、正しいものはどれですか。",
    "choices": [
     "ソースコード（Source Code） と バイナリ（Binaries）",
     "リソースグループ（Resource Groups） と サブスクリプション（Subscriptions）",
@@ -221,7 +221,7 @@
     "インボイス（Invoices） と クレジット（Credits）"
    ],
    "answer": 2,
-   "explanation": "Azure Monitorは、監視対象から収集したデータを主に「メトリック（時間の経過に伴う数値データ）」と「ログ（タイムスタンプ付きのテキストやレコードデータ）」の2種類に分類して蓄積・分析します。",
+   "explanation": "Azure Monitor は、監視対象から収集したデータを、数値データである「メトリック」と、タイムスタンプ付きのレコードである「ログ」などとして蓄積・分析します。",
    "topic": "Azure Monitor",
    "volatile": false,
    "createdAt": "2026-11-09"
