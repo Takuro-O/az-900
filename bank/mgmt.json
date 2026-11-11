@@ -757,6 +757,48 @@
    "topic": "Cloud Shell・Azure CLI・PowerShell",
    "volatile": false,
    "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Log Analytics ワークスペースに収集したデータに対して、ログ クエリの結果に基づいてアラートを発生させる機能はどれですか。",
+   "choices": [
+    "Azure Advisor の推奨事項",
+    "リソース ロック",
+    "メトリック アラート",
+    "ログ アラート"
+   ],
+   "answer": 3,
+   "explanation": "ログ アラートは、Log Analytics ワークスペースのログ データに対するクエリの結果に基づいて、アラートを発生させます。複数のリソースやサブスクリプションのログを、まとめて分析することもできます。",
+   "topic": "Azure Monitor",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Microsoft Entra ID のサインイン ログや監査ログを Azure Monitor に送信して、Log Analytics でクエリや分析、アラートの設定を行いたい場合に使う設定はどれですか。",
+   "choices": [
+    "リソース ロック",
+    "診断設定",
+    "タグ",
+    "条件付きアクセス"
+   ],
+   "answer": 1,
+   "explanation": "Microsoft Entra ID の診断設定で、サインイン ログや監査ログを、Log Analytics ワークスペース、Storage アカウント、Event Hubs などに送信できます。",
+   "topic": "Azure Monitor",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Azure 無料アカウントなどの使用制限（spending limit）について、正しい説明はどれですか。",
+   "choices": [
+    "金額はクレジットと同額で変更できず、制限なしにするか、同額の制限を設けるかのどちらかを選ぶ",
+    "任意の金額に、自由に変更できる",
+    "制限に達しても、サービスは有効なままで、超過分が請求される",
+    "従量課金制のサブスクリプションにも、既定で設定されている"
+   ],
+   "answer": 0,
+   "explanation": "使用制限は、クレジットの額を超える予期しない課金を防ぐ機能です。金額はクレジットと同額で、変更できません。制限に達すると、残りの請求期間は、サービスが無効になります。支払方法を登録すれば、制限を削除できます。",
+   "topic": "Microsoft Cost Management",
+   "volatile": false,
+   "createdAt": "2026-11-11"
   }
  ]
 }

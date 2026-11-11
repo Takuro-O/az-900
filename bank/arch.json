@@ -799,6 +799,90 @@
    "topic": "Microsoft Entra ID",
    "volatile": false,
    "createdAt": "2026-11-11"
+  },
+  {
+   "q": "ネットワーク セキュリティ グループ（NSG）の関連付け先として、正しい組み合わせはどれですか。",
+   "choices": [
+    "リージョンと、サブスクリプション",
+    "仮想ネットワーク全体と、リソースグループ",
+    "仮想ネットワーク全体と、ネットワーク インターフェイス（NIC）",
+    "サブネットと、ネットワーク インターフェイス（NIC）"
+   ],
+   "answer": 3,
+   "explanation": "NSG は、サブネットまたはネットワーク インターフェイスに関連付けて、トラフィックを制御します。仮想ネットワーク自体には関連付けません。",
+   "topic": "仮想ネットワークとエンドポイント",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "特定の IP アドレスから仮想マシンへのアクセスを拒否したい場合に、送信元 IP、ポート、プロトコルを指定して、通信を許可または拒否するルールを設定できる機能はどれですか。",
+   "choices": [
+    "Azure DNS",
+    "Azure Traffic Manager",
+    "ネットワーク セキュリティ グループ（NSG）",
+    "Azure DDoS Protection"
+   ],
+   "answer": 2,
+   "explanation": "NSG は、送信元や宛先の IP アドレス、ポート、プロトコルで、通信を許可または拒否します。Azure Firewall でも同様の制御ができます。DDoS Protection は攻撃からの保護、Traffic Manager は DNS を使った負荷分散で、個別の IP の制御には使いません。",
+   "topic": "仮想ネットワークとエンドポイント",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Microsoft Defender for Cloud の CSPM（クラウド セキュリティ態勢管理）の説明として、正しいものはどれですか。",
+   "choices": [
+    "ユーザーの Azure portal へのサインインを、多要素認証で保護する",
+    "支出が予算を超えたときに、通知を送る",
+    "仮想ネットワークの IP アドレスを、自動的に割り当てる",
+    "リソースの構成を継続的に評価し、セキュリティ標準に沿っていない設定を見つけて、改善の推奨事項を示す"
+   ],
+   "answer": 3,
+   "explanation": "CSPM は、クラウド リソースの構成を継続的に評価して、セキュリティ上の問題を見つけ、改善の推奨事項を示す機能です。仮想マシンやコンテナーなどのワークロードを脅威から保護する機能は、CWPP と呼ばれます。",
+   "topic": "Microsoft Defender for Cloud",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Azure 環境が、特定の規制や標準にどの程度準拠しているかを継続的に評価し、結果をレポートとして出力して、監査に提供できる Microsoft Defender for Cloud の機能はどれですか。",
+   "choices": [
+    "Advisor スコア",
+    "Resource Health",
+    "規制コンプライアンス ダッシュボード",
+    "コスト分析"
+   ],
+   "answer": 2,
+   "explanation": "Defender for Cloud の規制コンプライアンス ダッシュボードは、環境を規制や標準の要件に照らして継続的に評価します。評価結果や推奨事項は、レポートとして出力し、監査人に提供できます。",
+   "topic": "Microsoft Defender for Cloud",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Azure のリソースを、別の Azure リージョンへ移動したい場合に、移動するリソース間の依存関係の特定も支援するサービスはどれですか。",
+   "choices": [
+    "Azure Migrate",
+    "Azure Data Box",
+    "AzCopy",
+    "Azure Resource Mover"
+   ],
+   "answer": 3,
+   "explanation": "Azure Resource Mover は、Azure のリソースを、リージョン間で移動するのを支援します。リソース間の依存関係を特定して、関連するリソースをまとめて移動できます。Azure Migrate は、オンプレミスから Azure への移行用です。",
+   "topic": "ファイル移動と移行ツール",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "ローカル冗長ストレージ（LRS）では、データは1つの物理データセンター内で、同期的に何回コピーされますか。",
+   "choices": [
+    "1回",
+    "6回",
+    "2回",
+    "3回"
+   ],
+   "answer": 3,
+   "explanation": "LRS は、プライマリ リージョンの1つの物理データセンター内で、データを3回コピーします。最もコストが低い一方で、データセンター全体の障害には耐えられません。",
+   "topic": "ストレージ層と冗長性",
+   "volatile": false,
+   "createdAt": "2026-11-11"
   }
  ]
 }
