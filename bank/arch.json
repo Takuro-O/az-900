@@ -1,6 +1,6 @@
 {
  "field": "arch",
- "updatedAt": "2026-11-11",
+ "updatedAt": "2026-11-12",
  "questions": [
   {
    "q": "ある企業において、特定のプロジェクトチームに対して Azure の仮想ネットワークの管理権限のみを付与し、仮想マシンの削除やストレージのアカウント操作は実行できないように設定したいと考えています。適切なアクセス制御を実現するために適用すべき概念として、最も適切なものはどれか。",
@@ -521,20 +521,6 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "Azure のストレージアカウントの説明として、正しいものはどれですか。",
-   "choices": [
-    "Microsoft Entra ID のユーザーアカウントの一覧",
-    "仮想ネットワークの IP アドレスを管理する単位",
-    "仮想マシン専用のディスクだけを格納する場所",
-    "Blob、Files、Queue、Table などのデータサービスに共通の名前空間や設定を提供する、管理の単位"
-   ],
-   "answer": 3,
-   "explanation": "ストレージアカウントは、Azure Storage のデータサービスをまとめる管理の単位で、名前空間、冗長性、アクセス設定などを持ちます。",
-   "topic": "Azure Storageサービス",
-   "volatile": false,
-   "createdAt": "2026-11-09"
-  },
-  {
    "q": "ホット層とクール層の比較として、正しいものはどれですか。",
    "choices": [
     "ホット層はストレージの費用が高いが、アクセスの費用は低い",
@@ -586,20 +572,6 @@
    ],
    "answer": 1,
    "explanation": "Azure File Sync は、オンプレミスのファイルサーバーを、Azure Files のキャッシュとして使えるようにします。",
-   "topic": "ファイル移動と移行ツール",
-   "volatile": false,
-   "createdAt": "2026-11-09"
-  },
-  {
-   "q": "グラフィカルな画面で、Azure Storage のデータを管理できる、クライアントアプリケーションはどれですか。",
-   "choices": [
-    "Azure Storage Explorer",
-    "AzCopy",
-    "Azure Data Box",
-    "Azure Migrate"
-   ],
-   "answer": 0,
-   "explanation": "Azure Storage Explorer は、GUI でストレージのデータを管理できるアプリです。AzCopy は、コマンドラインのツールです。",
    "topic": "ファイル移動と移行ツール",
    "volatile": false,
    "createdAt": "2026-11-09"
@@ -925,6 +897,48 @@
    "topic": "仮想ネットワークとエンドポイント",
    "volatile": false,
    "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Azure RBAC で、Azure リソースへのアクセスを要求する、ユーザー、グループ、サービス プリンシパル、マネージド ID を表すオブジェクトを、何と呼びますか。",
+   "choices": [
+    "ロール定義",
+    "スコープ",
+    "セキュリティ プリンシパル",
+    "Microsoft Entra テナント"
+   ],
+   "answer": 2,
+   "explanation": "Azure RBAC のロールの割り当ては、セキュリティ プリンシパル（誰が）、ロール定義（何ができるか）、スコープ（どこに適用するか）の3つの要素で構成されます。",
+   "topic": "RBAC",
+   "volatile": false,
+   "createdAt": "2026-11-12"
+  },
+  {
+   "q": "仮想マシンやストレージ アカウントなどの Azure リソースへのアクセスを制御するために使う、ロールの種類はどれですか。",
+   "choices": [
+    "Azure ロール（Azure RBAC）",
+    "条件付きアクセスのポリシー",
+    "Microsoft Entra ロール",
+    "Microsoft Entra のグループ"
+   ],
+   "answer": 0,
+   "explanation": "Azure ロール（Azure RBAC）は、コンピューティングやストレージなどの Azure リソースへのアクセスを制御します。Microsoft Entra ロールは、ユーザーの作成やパスワードのリセットなど、Microsoft Entra のリソースを管理するためのロールです。既定では、2つは互いの範囲にまたがりません。",
+   "topic": "RBAC",
+   "volatile": false,
+   "createdAt": "2026-11-12"
+  },
+  {
+   "q": "ロールを永続的に割り当てる代わりに、期限付きの「有資格」として割り当て、必要なときにだけアクティブ化させ、そのときに多要素認証や承認を求められる Microsoft Entra ID の機能はどれですか。",
+   "choices": [
+    "リソース ロック",
+    "Azure Policy",
+    "Microsoft Entra ID Protection",
+    "Privileged Identity Management（PIM）"
+   ],
+   "answer": 3,
+   "explanation": "PIM は、ジャスト イン タイム（JIT）の特権アクセスを提供します。開始日と終了日を設定した期限付きの割り当てができ、ロールのアクティブ化の際に、多要素認証の強制、承認、理由の入力などを求められます。",
+   "topic": "Microsoft Entra ID",
+   "volatile": false,
+   "createdAt": "2026-11-12"
   }
  ]
 }
