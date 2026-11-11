@@ -1,6 +1,6 @@
 {
  "field": "mgmt",
- "updatedAt": "2026-11-09",
+ "updatedAt": "2026-11-11",
  "questions": [
   {
    "q": "管理者が外出先から手元のタブレット端末を使い、Webブラウザー経由でAzureリソースをコマンド操作しようとしています。追加のソフトウェアをローカルにインストールせずに、ブラウザー内でBashまたはPowerShell環境を利用できるツールはどれですか。",
@@ -701,6 +701,62 @@
    "topic": "コストに影響する要因",
    "volatile": false,
    "createdAt": "2026-11-09"
+  },
+  {
+   "q": "クレジットカード番号などの機密情報を含む文書を検出し、秘密度ラベルを自動的に適用して、暗号化や視覚的なマーキング（透かしなど）を行うために使うものはどれですか。",
+   "choices": [
+    "Microsoft Defender for Cloud",
+    "Azure DDoS Protection",
+    "Microsoft Purview Information Protection",
+    "Microsoft Entra ID Protection"
+   ],
+   "answer": 2,
+   "explanation": "Microsoft Purview Information Protection は、機密情報を検出、分類、保護します。秘密度ラベルを使うと、暗号化、アクセス制限、視覚的なマーキングを適用できます。Entra ID Protection は ID のリスクを検出するサービスで、文書の保護には使いません。",
+   "topic": "Microsoft Purview",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "仮想マシンを含むリソースグループに、ReadOnly ロックを設定した場合に起こることとして、正しいものはどれですか。",
+   "choices": [
+    "仮想マシンの削除だけが禁止され、起動と再起動はできる",
+    "ロックがデータにも適用され、仮想マシン内のファイルが読み取り専用になる",
+    "リソースグループ内のすべてのリソースが、自動的に削除される",
+    "仮想マシンを起動したり、再起動したりできなくなる"
+   ],
+   "answer": 3,
+   "explanation": "ReadOnly ロックは、削除と更新をできなくします。仮想マシンの起動や再起動は、POST 要求を使う操作のため、できなくなります。ロックが適用されるのは、Azure の管理操作（コントロール プレーン）だけで、データの操作には適用されません。",
+   "topic": "リソースロック",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "オンプレミスのサーバーを Azure へ移行した場合のコストを、現在のオンプレミスのコストと比較して見積もりたい場合に、適したものはどれですか。",
+   "choices": [
+    "Azure 料金計算ツール",
+    "Azure Migrate のビジネス ケース",
+    "Azure Advisor",
+    "Azure Reservations"
+   ],
+   "answer": 1,
+   "explanation": "Azure Migrate のビジネス ケースでは、オンプレミスと Azure の総保有コスト（TCO）やキャッシュ フローを比較できます。Azure 料金計算ツールは、これから作るリソースの月額を見積もるものです。Azure Reservations は、割引を受ける仕組みで、見積もりツールではありません。",
+   "topic": "料金計算ツール",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "管理ツールの利用環境の説明として、正しいものはどれですか。",
+   "choices": [
+    "Azure Cloud Shell を使うには、ローカルに PowerShell をインストールする必要がある",
+    "Azure portal は、Windows のデバイスからしか使えない",
+    "Azure PowerShell は、Windows だけでなく、macOS や Linux にもインストールして使える",
+    "PowerShell は、Windows でしか使えない"
+   ],
+   "answer": 2,
+   "explanation": "Azure PowerShell は、Windows、macOS、Linux で使えます。Azure portal は、最新の Web ブラウザーがあれば、OS を問わず使えます。Azure Cloud Shell は、ブラウザーだけで使えます。",
+   "topic": "Cloud Shell・Azure CLI・PowerShell",
+   "volatile": false,
+   "createdAt": "2026-11-11"
   }
  ]
 }
