@@ -241,20 +241,6 @@
    "createdAt": "2026-11-08"
   },
   {
-   "q": "オンプレミスの物理サーバーや仮想マシン群をAzureへ一括で調査・評価し、スムーズに移行するための統合プラットフォームはどれですか。",
-   "choices": [
-    "Azure Migrate",
-    "Azure Data Box",
-    "AzCopy",
-    "Azure Storage Explorer"
-   ],
-   "answer": 0,
-   "explanation": "Azure Migrateは、オンプレミス環境の評価・移行を統合的にサポートするハブサービスです。サーバー、データベース、WebアプリなどのAzure移行を合理化します。",
-   "topic": "ファイル移動と移行ツール",
-   "volatile": false,
-   "createdAt": "2026-11-08"
-  },
-  {
    "q": "異なる2つのAzure仮想ネットワーク（VNet）間を、ルーターやインターネットを経由せず、Microsoftのバックボーンネットワークを通じて低遅延で直接接続する技術はどれですか。",
    "choices": [
     "VPN Gateway 接続（暗号化トンネル）",
@@ -353,20 +339,6 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "可用性ゾーンに対応しているリージョンで、有効なゾーンの数は、少なくとも幾つですか。",
-   "choices": [
-    "1つ",
-    "2つ",
-    "3つ",
-    "5つ"
-   ],
-   "answer": 2,
-   "explanation": "可用性ゾーンに対応するリージョンには、物理的に分離されたゾーンが、少なくとも3つあります。",
-   "topic": "可用性ゾーンとデータセンター",
-   "volatile": false,
-   "createdAt": "2026-11-09"
-  },
-  {
    "q": "リソースグループについて、正しい説明はどれですか。",
    "choices": [
     "1つのリソースは、同時に複数のリソースグループに属せる",
@@ -451,20 +423,6 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "多数のコンテナー化したアプリケーションのデプロイ、スケーリング、管理を自動化する、コンテナーのオーケストレーションを提供するサービスはどれですか。",
-   "choices": [
-    "Azure Virtual Machine Scale Sets",
-    "Azure Kubernetes Service（AKS）",
-    "Azure Container Instances",
-    "Azure Functions"
-   ],
-   "answer": 1,
-   "explanation": "AKS は、Kubernetes を使ったコンテナーのオーケストレーションを提供します。Azure Container Instances は、オーケストレーションなしで、コンテナーを単体で実行します。",
-   "topic": "コンピューティングの種類",
-   "volatile": false,
-   "createdAt": "2026-11-09"
-  },
-  {
    "q": "Azure DNS の役割として、正しいものはどれですか。",
    "choices": [
     "複数のサーバーに、受信トラフィックを分散する",
@@ -545,20 +503,6 @@
    "answer": 2,
    "explanation": "Microsoft Entra Domain Services は、マネージドなドメインサービスを提供し、従来の Active Directory を必要とするアプリを使えるようにします。",
    "topic": "Microsoft Entra ID",
-   "volatile": false,
-   "createdAt": "2026-11-09"
-  },
-  {
-   "q": "一度サインインすれば、複数のアプリケーションに、再度サインインせずにアクセスできるようにする仕組みはどれですか。",
-   "choices": [
-    "パスワードレス認証（生体認証など）",
-    "シングル サインオン（SSO）",
-    "多要素認証（2つ以上の要素で確認）",
-    "条件付きアクセス（シグナルに基づく制御）"
-   ],
-   "answer": 1,
-   "explanation": "SSO を使うと、1回のサインインで、複数のアプリやサービスにアクセスできます。",
-   "topic": "認証方法と条件付きアクセス",
    "volatile": false,
    "createdAt": "2026-11-09"
   },
