@@ -799,6 +799,62 @@
    "topic": "Microsoft Cost Management",
    "volatile": false,
    "createdAt": "2026-11-11"
+  },
+  {
+   "q": "複数の Azure Policy の定義を、1つの目標のためにまとめて、1回の割り当てで管理できるようにする機能はどれですか。",
+   "choices": [
+    "リソース ロック",
+    "リソース グループ",
+    "イニシアティブ定義",
+    "タグ"
+   ],
+   "answer": 2,
+   "explanation": "イニシアティブ定義は、1つの大きな目標を達成するために、ポリシー定義をまとめたコレクションです。まとめて割り当てて管理できます。1つのポリシーから始める場合も、後から追加しやすいように、イニシアティブでの割り当てが推奨されています。",
+   "topic": "Azure Policy",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Android タブレットから、新しい Azure 仮想マシンを作成する必要があります。使える方法として、正しいものはどれですか。",
+   "choices": [
+    "Azure Cloud Shell で、コマンド プロンプト（cmd）を使う",
+    "Web ブラウザーまたは Azure モバイル アプリから、Azure portal を使う",
+    "タブレットに Azure CLI をインストールして使う",
+    "タブレットに Azure PowerShell をインストールして使う"
+   ],
+   "answer": 1,
+   "explanation": "Azure portal は Web ベースで、ブラウザーや、iOS・Android 向けの Azure モバイル アプリから使えます。Azure CLI のインストール対象は Windows、Linux、macOS で、Azure PowerShell も同様です。Cloud Shell で選べるシェルは Bash と PowerShell だけで、コマンド プロンプトはありません。",
+   "topic": "Azure portal",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "Azure Advisor の推奨事項の料金について、正しい説明はどれですか。",
+   "choices": [
+    "推奨事項ごとに、従量課金で請求される",
+    "有料のプランに加入しないと、利用できない",
+    "推奨事項は、追加料金なしで利用できる",
+    "基本は無料だが、セキュリティの推奨事項は有料"
+   ],
+   "answer": 2,
+   "explanation": "Azure Advisor の推奨事項は、追加料金なしで利用できます。信頼性、セキュリティ、パフォーマンス、コスト、オペレーショナル エクセレンスの5つの観点で、リソースの最適化を提案します。",
+   "topic": "Azure Advisor",
+   "volatile": false,
+   "createdAt": "2026-11-11"
+  },
+  {
+   "q": "自分が利用している Azure のサービスやリージョンに影響する障害や計画メンテナンスについて、メールなどで通知を受け取るために設定するものはどれですか。",
+   "choices": [
+    "Service Health アラート",
+    "Azure Advisor のスコア",
+    "リソース ロック",
+    "コストの予算アラート"
+   ],
+   "answer": 0,
+   "explanation": "Azure Service Health は、利用しているサービスとリージョンに絞って、障害、計画メンテナンス、ヘルス アドバイザリを通知します。Service Health アラートを設定すると、好みの通知方法で受け取れます。障害そのものを防ぐ機能ではありません。",
+   "topic": "Azure Service Health",
+   "volatile": false,
+   "createdAt": "2026-11-11"
   }
  ]
 }
