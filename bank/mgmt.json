@@ -31,20 +31,6 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "Azure portalの特徴や機能として、適切なものはどれですか。",
-   "choices": [
-    "オンプレミスとAzureのネットワークを安全に接続するための専用VPNゲートウェイである",
-    "オンプレミスのサーバーをAzureの管理下に登録するための専用エージェントソフトウェアである",
-    "リソースの定期的なバックアップ処理を自動化するためのスクリプト実行エンジンである",
-    "Webブラウザーを通じてAzure環境の構築や管理を視覚的に行えるグラフィカルユーザーインターフェイスである"
-   ],
-   "answer": 3,
-   "explanation": "Azure portalは、Webベースの統合管理コンソールであり、GUI（グラフィカルユーザーインターフェイス）を使用してAzureリソースの作成、管理、監視を視覚的に行えます。スクリプトの実行エンジンやオンプレミス用エージェント、VPN接続の本体ではありません。",
-   "topic": "Azure portal",
-   "volatile": false,
-   "createdAt": "2026-11-09"
-  },
-  {
    "q": "社内のクラウド環境において、利用率が極めて低い仮想マシンを特定してサイズ縮小の提案を受けたり、セキュリティ基準を満たしていない設定の改善案を確認したりするために活用できるサービスはどれですか。",
    "choices": [
     "Azure Advisor",
@@ -853,6 +839,48 @@
    "answer": 2,
    "explanation": "ポリシー割り当ての範囲には、配下の子のリソースも含まれます。子のコンテナーやリソースを評価から外すには、割り当ての notScopes（除外スコープ）に追加します。ポリシー定義を削除すると、同じ定義を使うほかの割り当ても影響を受けます。Azure Policy は、操作する人のロールではなく、リソースのプロパティを評価します。",
    "topic": "Azure Policy",
+   "volatile": false,
+   "createdAt": "2026-11-12"
+  },
+  {
+   "q": "管理者が仮想マシンを停止した、といった Azure の操作の記録（アクティビティ ログ）をもとに、自動でアラートを発生させるために使うサービスはどれですか。",
+   "choices": [
+    "Microsoft Defender for Cloud（脅威の検出）",
+    "Azure Service Health（サービスの障害の通知）",
+    "Azure Advisor（推奨事項の提示）",
+    "Azure Monitor（ログの収集とアラート）"
+   ],
+   "answer": 3,
+   "explanation": "Azure のリソースに対する操作は、アクティビティ ログに記録されます。Azure Monitor のアクティビティ ログ アラートを使うと、再起動、停止、リソースの作成や削除といった特定のイベントをトリガーに、アラートを発生させられます。Service Health は、Azure のサービス自体の障害やメンテナンスを通知します。",
+   "topic": "Azure Monitor",
+   "volatile": false,
+   "createdAt": "2026-11-12"
+  },
+  {
+   "q": "リソース グループに、仮想ネットワークの作成を拒否する Azure Policy（Deny）を割り当てました。割り当てる前から、そのリソース グループにあった仮想ネットワークは、どうなりますか。",
+   "choices": [
+    "削除も停止もされず、引き続き利用できる。非準拠として評価される",
+    "割り当てと同時に、リソース グループ内から自動的に削除される",
+    "割り当てと同時に、自動的に停止されて、利用できなくなる",
+    "別のリソース グループへ、自動的に移動される"
+   ],
+   "answer": 0,
+   "explanation": "Deny は、一致するリソースの新規作成や更新の要求を、事前にブロックします。割り当て前から存在するリソースは、削除や停止はされず、評価によって非準拠と判定されます。",
+   "topic": "Azure Policy",
+   "volatile": false,
+   "createdAt": "2026-11-12"
+  },
+  {
+   "q": "Azure Cloud Shell を起動できる場所として、正しいものはどれですか。",
+   "choices": [
+    "Azure Policy のポリシー定義の画面",
+    "Azure portal や、Azure モバイル アプリ",
+    "Azure Advisor の推奨事項の画面",
+    "Microsoft Entra ID のサインイン ログの画面"
+   ],
+   "answer": 1,
+   "explanation": "Cloud Shell は、Azure portal、shell.azure.com、Azure モバイル アプリ、Visual Studio Code の拡張機能などから起動できます。シェルは、Bash と PowerShell から選べます。",
+   "topic": "Cloud Shell・Azure CLI・PowerShell",
    "volatile": false,
    "createdAt": "2026-11-12"
   }

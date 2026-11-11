@@ -437,20 +437,6 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "クラウド上で Windows のデスクトップ環境とアプリケーションを、さまざまな端末へ配信するサービスはどれですか。",
-   "choices": [
-    "Azure Container Instances",
-    "Azure Functions",
-    "Azure Virtual Desktop",
-    "Azure App Service"
-   ],
-   "answer": 2,
-   "explanation": "Azure Virtual Desktop は、デスクトップとアプリケーションを、場所や端末を問わず利用できるようにするサービスです。",
-   "topic": "仮想マシンのオプション",
-   "volatile": false,
-   "createdAt": "2026-11-09"
-  },
-  {
    "q": "Azure で仮想マシンを作成するときに、仮想マシンと合わせて構成が必要になる一般的なリソースの組み合わせはどれですか。",
    "choices": [
     "ExpressRoute 回線と VPN Gateway",
@@ -503,20 +489,6 @@
    "answer": 1,
    "explanation": "プライベート エンドポイントは、仮想ネットワークのプライベート IP アドレスを使います。そのため、インターネットを経由せずに、サービスへ接続できます。",
    "topic": "仮想ネットワークとエンドポイント",
-   "volatile": false,
-   "createdAt": "2026-11-09"
-  },
-  {
-   "q": "アプリケーションのコンポーネント間で、メッセージを格納して非同期にやり取りするために使う Azure のストレージサービスはどれですか。",
-   "choices": [
-    "Azure Blob Storage",
-    "Azure Table Storage",
-    "Azure Queue Storage",
-    "Azure Files"
-   ],
-   "answer": 2,
-   "explanation": "Queue Storage は、メッセージのキューを提供し、アプリケーション間で非同期にメッセージをやり取りできます。",
-   "topic": "Azure Storageサービス",
    "volatile": false,
    "createdAt": "2026-11-09"
   },
@@ -923,6 +895,20 @@
    "answer": 3,
    "explanation": "PIM は、ジャスト イン タイム（JIT）の特権アクセスを提供します。開始日と終了日を設定した期限付きの割り当てができ、ロールのアクティブ化の際に、多要素認証の強制、承認、理由の入力などを求められます。",
    "topic": "Microsoft Entra ID",
+   "volatile": false,
+   "createdAt": "2026-11-12"
+  },
+  {
+   "q": "Azure のサービスや機能の提供状況について、正しい説明はどれですか。",
+   "choices": [
+    "すべてのリージョンで、すべてのサービスが、同じ機能で提供される",
+    "サービスや機能の提供状況は、リージョンによって異なる",
+    "サービスの提供状況は、サブスクリプションの種類だけで決まる",
+    "新しいサービスは、必ず日本のリージョンから先に提供される"
+   ],
+   "answer": 1,
+   "explanation": "Azure のサービスの一部は、特定のリージョンでしか提供されません。リージョンによって、サービスや機能の提供状況は異なります。そのため、利用したいサービスが、選んだリージョンで使えるかを確認する必要があります。リージョンを選ぶときは、ほかに、データの所在地や規制、利用者との近さ（遅延）も考慮します。",
+   "topic": "リージョンとリージョンペア",
    "volatile": false,
    "createdAt": "2026-11-12"
   }
