@@ -5,9 +5,9 @@
   {
    "q": "管理者が外出先から手元のタブレット端末を使い、Webブラウザー経由でAzureリソースをコマンド操作しようとしています。追加のソフトウェアをローカルにインストールせずに、ブラウザー内でBashまたはPowerShell環境を利用できるツールはどれですか。",
    "choices": [
-    "Azure CLI",
-    "Azure Arc",
-    "Azure PowerShell",
+    "Azure CLI（ローカルにインストールして使う）",
+    "Azure Arc（外部のサーバーを管理する）",
+    "Azure PowerShell（ローカルにインストールして使う）",
     "Azure Cloud Shell"
    ],
    "answer": 3,
@@ -202,9 +202,9 @@
    "q": "企業が新規システムの構築を検討しており、実際にAzureリソースをプロビジョニングする前に、想定される構成に応じた月額費用の概算を見積もりたいと考えています。最も適切なツールはどれですか。",
    "choices": [
     "料金計算ツール（Pricing Calculator）",
-    "Azure Advisor",
-    "Azure Policy",
-    "Microsoft Cost Management"
+    "Azure Advisor（推奨事項の提示）",
+    "Azure Policy（ルールの強制）",
+    "Microsoft Cost Management（実績の分析）"
    ],
    "answer": 0,
    "explanation": "料金計算ツール（Pricing Calculator）は、必要なAzure製品や構成（VMのスペック、ストレージ容量、リージョンなど）を選択して入力することで、Azure導入時の予想月額コストを見積もるためのツールです。",
@@ -229,9 +229,9 @@
   {
    "q": "プロジェクトごとのクラウド支出を監視し、月間の利用額が事前に定めた金額に近づいた際に担当者へ警告通知を送信する「予算（Budgets）」を設定できるツールはどれですか。",
    "choices": [
-    "Azure Service Health",
-    "料金計算ツール",
-    "Azure Arc",
+    "Azure Service Health（障害情報の通知）",
+    "料金計算ツール（費用の見積もり）",
+    "Azure Arc（サーバーの一元管理）",
     "Microsoft Cost Management"
    ],
    "answer": 3,
@@ -453,10 +453,10 @@
   {
    "q": "Azure Arc に関する説明として、誤っているものはどれですか。",
    "choices": [
-    "Kubernetes クラスターを Azure から管理できる",
-    "他社クラウド上のサーバーを Azure から管理できる",
-    "オンプレミスのサーバーを Azure から管理できる",
-    "Azure Arc を使うには、管理対象のサーバーをすべて Azure へ移行する必要がある"
+    "Kubernetes クラスターを、Azure から一元的に管理できる",
+    "他社クラウド上のサーバーを、Azure から管理できる",
+    "オンプレミスのサーバーを、Azure から管理できる",
+    "管理対象のサーバーを、すべて Azure へ移行する必要がある"
    ],
    "answer": 3,
    "explanation": "Azure Arc は、リソースを移行せずに、今ある場所のまま Azure から管理するためのサービスです。",
@@ -495,10 +495,10 @@
   {
    "q": "Azure portal、Azure CLI、PowerShell など、どの管理ツールから操作しても、リソースの作成・更新・削除の要求を受け付ける Azure の管理レイヤーはどれですか。",
    "choices": [
-    "Azure Advisor",
-    "Azure Monitor",
+    "Azure Advisor（推奨事項の提示）",
+    "Azure Monitor（監視とアラート）",
     "Azure Resource Manager",
-    "Azure Arc"
+    "Azure Arc（外部のサーバーの管理）"
    ],
    "answer": 2,
    "explanation": "Azure Resource Manager（ARM）は Azure の管理レイヤーで、どのツールからの要求も受け付け、認証・認可を行ってから処理します。",
@@ -537,9 +537,9 @@
   {
    "q": "Azure Advisor の推奨事項のうち、可用性ゾーンの利用など、重要なアプリケーションの継続性を高める提案を含むカテゴリはどれですか。",
    "choices": [
-    "コスト",
-    "パフォーマンス",
-    "オペレーショナル エクセレンス",
+    "コスト（Cost）",
+    "パフォーマンス（Performance）",
+    "オペレーショナル エクセレンス（Operational excellence）",
     "信頼性（Reliability）"
    ],
    "answer": 3,
@@ -594,9 +594,9 @@
    "q": "Azure Monitor で収集したログを、クエリ言語（KQL）で検索・分析するために使う場所はどれですか。",
    "choices": [
     "Log Analytics ワークスペース",
-    "リソースロック",
-    "Azure Advisor",
-    "Azure の料金計算ツール"
+    "リソースロック（削除や変更の防止）",
+    "Azure Advisor（推奨事項の提示）",
+    "Azure の料金計算ツール（費用の見積もり）"
    ],
    "answer": 0,
    "explanation": "Azure Monitor のログは Log Analytics ワークスペースに保存され、KQL（Kusto Query Language）で分析できます。",
@@ -635,10 +635,10 @@
   {
    "q": "Azure Monitor で監視できる範囲として、正しいものはどれですか。",
    "choices": [
-    "課金データだけを監視できる",
-    "Azure のリソースだけでなく、オンプレミスや他社クラウドのリソースからもデータを収集できる",
-    "Azure 上の仮想マシンだけを監視できる",
-    "Azure portal へのサインイン履歴だけを監視できる"
+    "課金データだけを監視でき、ほかのデータは収集できない",
+    "Azure だけでなく、オンプレミスや他社クラウドのリソースからも、データを収集できる",
+    "Azure 上の仮想マシンだけを監視でき、ほかのリソースは対象外",
+    "Azure portal へのサインイン履歴だけを監視でき、リソースは対象外"
    ],
    "answer": 1,
    "explanation": "Azure Monitor は、Azure のリソースに加えて、オンプレミスや他のクラウドのリソースからもデータを収集できます。",
@@ -650,9 +650,9 @@
    "q": "Azure Monitor のメトリックの特徴として、適切なものはどれですか。",
    "choices": [
     "主にテキスト形式のイベント記録で、詳細な調査には向くが、数値の傾向把握には向かない",
-    "手動で入力したデータだけを保存する",
-    "一定間隔で収集される数値データで、CPU 使用率などの傾向を、ほぼリアルタイムで把握するのに向く",
-    "請求に関する情報だけを記録する"
+    "利用者が手動で入力したデータだけを保存し、自動収集はしない",
+    "一定間隔で収集される数値データで、CPU 使用率などの傾向を、ほぼリアルタイムで把握できる",
+    "請求に関する情報だけを記録し、リソースの性能は扱わない"
    ],
    "answer": 2,
    "explanation": "メトリックは、CPU 使用率のような数値を一定間隔で収集します。軽量で、ほぼリアルタイムの傾向把握に向きます。詳細な記録は、ログで確認します。",
@@ -691,10 +691,10 @@
   {
    "q": "クレジットカード番号などの機密情報を含む文書を検出し、秘密度ラベルを自動的に適用して、暗号化や視覚的なマーキング（透かしなど）を行うために使うものはどれですか。",
    "choices": [
-    "Microsoft Defender for Cloud",
-    "Azure DDoS Protection",
+    "Microsoft Defender for Cloud（態勢管理）",
+    "Azure DDoS Protection（攻撃対策）",
     "Microsoft Purview Information Protection",
-    "Microsoft Entra ID Protection"
+    "Microsoft Entra ID Protection（ID のリスク検出）"
    ],
    "answer": 2,
    "explanation": "Microsoft Purview Information Protection は、機密情報を検出、分類、保護します。秘密度ラベルを使うと、暗号化、アクセス制限、視覚的なマーキングを適用できます。Entra ID Protection は ID のリスクを検出するサービスで、文書の保護には使いません。",
@@ -719,10 +719,10 @@
   {
    "q": "オンプレミスのサーバーを Azure へ移行した場合のコストを、現在のオンプレミスのコストと比較して見積もりたい場合に、適したものはどれですか。",
    "choices": [
-    "Azure 料金計算ツール",
+    "Azure 料金計算ツール（新規構成の見積もり）",
     "Azure Migrate のビジネス ケース",
-    "Azure Advisor",
-    "Azure Reservations"
+    "Azure Advisor（推奨事項の提示）",
+    "Azure Reservations（予約による割引）"
    ],
    "answer": 1,
    "explanation": "Azure Migrate のビジネス ケースでは、オンプレミスと Azure の総保有コスト（TCO）やキャッシュ フローを比較できます。Azure 料金計算ツールは、これから作るリソースの月額を見積もるものです。Azure Reservations は、割引を受ける仕組みで、見積もりツールではありません。",
@@ -734,9 +734,9 @@
    "q": "管理ツールの利用環境の説明として、正しいものはどれですか。",
    "choices": [
     "Azure Cloud Shell を使うには、ローカルに PowerShell をインストールする必要がある",
-    "Azure portal は、Windows のデバイスからしか使えない",
-    "Azure PowerShell は、Windows だけでなく、macOS や Linux にもインストールして使える",
-    "PowerShell は、Windows でしか使えない"
+    "Azure portal は、Windows のデバイスのブラウザーからしか使えない",
+    "Azure PowerShell は、Windows のほか、macOS や Linux にもインストールできる",
+    "Azure PowerShell は、Windows にしかインストールして使えない"
    ],
    "answer": 2,
    "explanation": "Azure PowerShell は、Windows、macOS、Linux で使えます。Azure portal は、最新の Web ブラウザーがあれば、OS を問わず使えます。Azure Cloud Shell は、ブラウザーだけで使えます。",
@@ -775,8 +775,8 @@
   {
    "q": "Azure 無料アカウントなどの使用制限（spending limit）について、正しい説明はどれですか。",
    "choices": [
-    "金額はクレジットと同額で変更できず、制限なしにするか、同額の制限を設けるかのどちらかを選ぶ",
-    "任意の金額に、自由に変更できる",
+    "金額はクレジットと同額で、変更できない",
+    "任意の金額に、自由に変更でき、いつでも設定し直せる",
     "制限に達しても、サービスは有効なままで、超過分が請求される",
     "従量課金制のサブスクリプションにも、既定で設定されている"
    ],
@@ -832,9 +832,9 @@
    "q": "自分が利用している Azure のサービスやリージョンに影響する障害や計画メンテナンスについて、メールなどで通知を受け取るために設定するものはどれですか。",
    "choices": [
     "Service Health アラート",
-    "Azure Advisor のスコア",
-    "リソース ロック",
-    "コストの予算アラート"
+    "Azure Advisor のスコア（推奨の実施率）",
+    "リソース ロック（削除や変更の防止）",
+    "コストの予算アラート（支出の通知）"
    ],
    "answer": 0,
    "explanation": "Azure Service Health は、利用しているサービスとリージョンに絞って、障害、計画メンテナンス、ヘルス アドバイザリを通知します。Service Health アラートを設定すると、好みの通知方法で受け取れます。障害そのものを防ぐ機能ではありません。",
@@ -846,9 +846,9 @@
    "q": "Azure Policy の割り当てを、サブスクリプションに設定しています。特定のリソース グループだけを、評価の対象から外して、ほかには適用したままにするには、どうしますか。",
    "choices": [
     "そのリソース グループに、所有者のロールを割り当てる",
-    "そのリソース グループに、リソース ロックを設定する",
+    "そのリソース グループに、リソース ロックを設定して、評価を止める",
     "割り当ての除外スコープ（notScopes）に、そのリソース グループを追加する",
-    "ポリシー定義を削除する"
+    "ポリシー定義を削除して、すべての割り当てを無効にする"
    ],
    "answer": 2,
    "explanation": "ポリシー割り当ての範囲には、配下の子のリソースも含まれます。子のコンテナーやリソースを評価から外すには、割り当ての notScopes（除外スコープ）に追加します。ポリシー定義を削除すると、同じ定義を使うほかの割り当ても影響を受けます。Azure Policy は、操作する人のロールではなく、リソースのプロパティを評価します。",
