@@ -243,9 +243,9 @@
   {
    "q": "異なる2つのAzure仮想ネットワーク（VNet）間を、ルーターやインターネットを経由せず、Microsoftのバックボーンネットワークを通じて低遅延で直接接続する技術はどれですか。",
    "choices": [
-    "VPN Gateway 接続（暗号化トンネル）",
-    "ExpressRoute 接続（専用線）",
-    "Azure Front Door（グローバルな Web 配信）",
+    "VPN Gateway 接続",
+    "ExpressRoute 接続",
+    "Azure Front Door",
     "仮想ネットワークピアリング（VNet Peering）"
    ],
    "answer": 3,
@@ -285,9 +285,9 @@
   {
    "q": "Azure上のマルチクラウド環境やハイブリッド環境のリソースに対して、セキュリティ姿勢の評価や脅威保護、脆弱性の検出を一元的に提供する管理ツールはどれですか。",
    "choices": [
-    "Azure Policy（ルールによる統制）",
-    "Azure Advisor（推奨事項の提示）",
-    "Microsoft Sentinel（SIEM による脅威検出）",
+    "Azure Policy",
+    "Azure Advisor",
+    "Microsoft Sentinel",
     "Microsoft Defender for Cloud"
    ],
    "answer": 3,
@@ -314,9 +314,9 @@
    "q": "オンプレミスのActive Directoryを使用している企業が、ユーザーに同じ資格情報でAzure上のクラウドサービスにも認証できるようにするメカニズムはどれですか。",
    "choices": [
     "ハイブリッドアイデンティティ（パスワードハッシュ同期など）",
-    "ゲストユーザーの招待（B2B）による、外部ユーザーの追加",
-    "条件付きアクセスポリシーによる、サインイン時の制御",
-    "Azure RBAC のカスタムロールによる、権限の細分化"
+    "ゲストユーザー招待（B2B）",
+    "条件付きアクセスポリシー",
+    "Azure RBACカスタムロール"
    ],
    "answer": 0,
    "explanation": "Microsoft Entra Connectなどを利用したハイブリッドアイデンティティ構成により、オンプレミスとクラウド間でIDを統合し、シームレスな単一サインオン環境を実現します。",
@@ -383,7 +383,7 @@
   {
    "q": "同じ構成の仮想マシンを、負荷に応じて自動的に増減させながら、まとめて管理するためのサービスはどれですか。",
    "choices": [
-    "可用性セット（障害ドメインへの分散）",
+    "可用性セット",
     "Azure Container Instances",
     "Azure Virtual Desktop",
     "Azure Virtual Machine Scale Sets"
@@ -495,10 +495,10 @@
   {
    "q": "ドメインコントローラーを自分で運用せずに、ドメイン参加、グループポリシー、LDAP、Kerberos を必要とするアプリを使うための Azure のサービスはどれですか。",
    "choices": [
-    "Microsoft Entra 条件付きアクセス（サインインの制御）",
-    "Azure RBAC（ロールによるアクセス制御）",
+    "Microsoft Entra 条件付きアクセス",
+    "Azure RBAC",
     "Microsoft Entra Domain Services",
-    "Azure Policy（リソースの準拠状態の評価）"
+    "Azure Policy"
    ],
    "answer": 2,
    "explanation": "Microsoft Entra Domain Services は、マネージドなドメインサービスを提供し、従来の Active Directory を必要とするアプリを使えるようにします。",
@@ -719,10 +719,10 @@
   {
    "q": "Azure 環境が、特定の規制や標準にどの程度準拠しているかを継続的に評価し、結果をレポートとして出力して、監査に提供できる Microsoft Defender for Cloud の機能はどれですか。",
    "choices": [
-    "Advisor スコア（推奨事項の実施状況）",
-    "Resource Health（リソースの正常性）",
+    "Advisor スコア",
+    "Resource Health",
     "規制コンプライアンス ダッシュボード",
-    "コスト分析（支出の確認）"
+    "コスト分析"
    ],
    "answer": 2,
    "explanation": "Defender for Cloud の規制コンプライアンス ダッシュボードは、環境を規制や標準の要件に照らして継続的に評価します。評価結果や推奨事項は、レポートとして出力し、監査人に提供できます。",
@@ -733,9 +733,9 @@
   {
    "q": "Azure のリソースを、別の Azure リージョンへ移動したい場合に、移動するリソース間の依存関係の特定も支援するサービスはどれですか。",
    "choices": [
-    "Azure Migrate（オンプレミスからの移行）",
-    "Azure Data Box（物理デバイスでの転送）",
-    "AzCopy（コマンドでのコピー）",
+    "Azure Migrate",
+    "Azure Data Box",
+    "AzCopy",
     "Azure Resource Mover"
    ],
    "answer": 3,
@@ -831,9 +831,9 @@
   {
    "q": "ロールを永続的に割り当てる代わりに、期限付きの「有資格」として割り当て、必要なときにだけアクティブ化させ、そのときに多要素認証や承認を求められる Microsoft Entra ID の機能はどれですか。",
    "choices": [
-    "リソース ロック（削除や変更の防止）",
-    "Azure Policy（リソースの準拠状態の評価）",
-    "Microsoft Entra ID Protection（リスクの検出）",
+    "リソース ロック",
+    "Azure Policy",
+    "Microsoft Entra ID Protection",
     "Privileged Identity Management（PIM）"
    ],
    "answer": 3,

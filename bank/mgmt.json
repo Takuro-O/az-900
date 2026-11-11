@@ -5,9 +5,9 @@
   {
    "q": "管理者が外出先から手元のタブレット端末を使い、Webブラウザー経由でAzureリソースをコマンド操作しようとしています。追加のソフトウェアをローカルにインストールせずに、ブラウザー内でBashまたはPowerShell環境を利用できるツールはどれですか。",
    "choices": [
-    "Azure CLI（ローカルにインストールして使う）",
-    "Azure Arc（外部のサーバーを管理する）",
-    "Azure PowerShell（ローカルにインストールして使う）",
+    "Azure CLI",
+    "Azure Arc",
+    "Azure PowerShell",
     "Azure Cloud Shell"
    ],
    "answer": 3,
@@ -146,9 +146,9 @@
    "q": "企業が新規システムの構築を検討しており、実際にAzureリソースをプロビジョニングする前に、想定される構成に応じた月額費用の概算を見積もりたいと考えています。最も適切なツールはどれですか。",
    "choices": [
     "料金計算ツール（Pricing Calculator）",
-    "Azure Advisor（推奨事項の提示）",
-    "Azure Policy（ルールの強制）",
-    "Microsoft Cost Management（実績の分析）"
+    "Azure Advisor",
+    "Azure Policy",
+    "Microsoft Cost Management"
    ],
    "answer": 0,
    "explanation": "料金計算ツール（Pricing Calculator）は、必要なAzure製品や構成（VMのスペック、ストレージ容量、リージョンなど）を選択して入力することで、Azure導入時の予想月額コストを見積もるためのツールです。",
@@ -173,9 +173,9 @@
   {
    "q": "プロジェクトごとのクラウド支出を監視し、月間の利用額が事前に定めた金額に近づいた際に担当者へ警告通知を送信する「予算（Budgets）」を設定できるツールはどれですか。",
    "choices": [
-    "Azure Service Health（障害情報の通知）",
-    "料金計算ツール（費用の見積もり）",
-    "Azure Arc（サーバーの一元管理）",
+    "Azure Service Health",
+    "料金計算ツール",
+    "Azure Arc",
     "Microsoft Cost Management"
    ],
    "answer": 3,
@@ -425,10 +425,10 @@
   {
    "q": "Azure portal、Azure CLI、PowerShell など、どの管理ツールから操作しても、リソースの作成・更新・削除の要求を受け付ける Azure の管理レイヤーはどれですか。",
    "choices": [
-    "Azure Advisor（推奨事項の提示）",
-    "Azure Monitor（監視とアラート）",
+    "Azure Advisor",
+    "Azure Monitor",
     "Azure Resource Manager",
-    "Azure Arc（外部のサーバーの管理）"
+    "Azure Arc"
    ],
    "answer": 2,
    "explanation": "Azure Resource Manager（ARM）は Azure の管理レイヤーで、どのツールからの要求も受け付け、認証・認可を行ってから処理します。",
@@ -524,9 +524,9 @@
    "q": "Azure Monitor で収集したログを、クエリ言語（KQL）で検索・分析するために使う場所はどれですか。",
    "choices": [
     "Log Analytics ワークスペース",
-    "リソースロック（削除や変更の防止）",
-    "Azure Advisor（推奨事項の提示）",
-    "Azure の料金計算ツール（費用の見積もり）"
+    "リソースロック",
+    "Azure Advisor",
+    "Azure の料金計算ツール"
    ],
    "answer": 0,
    "explanation": "Azure Monitor のログは Log Analytics ワークスペースに保存され、KQL（Kusto Query Language）で分析できます。",
@@ -621,10 +621,10 @@
   {
    "q": "クレジットカード番号などの機密情報を含む文書を検出し、秘密度ラベルを自動的に適用して、暗号化や視覚的なマーキング（透かしなど）を行うために使うものはどれですか。",
    "choices": [
-    "Microsoft Defender for Cloud（態勢管理）",
-    "Azure DDoS Protection（攻撃対策）",
+    "Microsoft Defender for Cloud",
+    "Azure DDoS Protection",
     "Microsoft Purview Information Protection",
-    "Microsoft Entra ID Protection（ID のリスク検出）"
+    "Microsoft Entra ID Protection"
    ],
    "answer": 2,
    "explanation": "Microsoft Purview Information Protection は、機密情報を検出、分類、保護します。秘密度ラベルを使うと、暗号化、アクセス制限、視覚的なマーキングを適用できます。Entra ID Protection は ID のリスクを検出するサービスで、文書の保護には使いません。",
@@ -649,10 +649,10 @@
   {
    "q": "オンプレミスのサーバーを Azure へ移行した場合のコストを、現在のオンプレミスのコストと比較して見積もりたい場合に、適したものはどれですか。",
    "choices": [
-    "Azure 料金計算ツール（新規構成の見積もり）",
+    "Azure 料金計算ツール",
     "Azure Migrate のビジネス ケース",
-    "Azure Advisor（推奨事項の提示）",
-    "Azure Reservations（予約による割引）"
+    "Azure Advisor",
+    "Azure Reservations"
    ],
    "answer": 1,
    "explanation": "Azure Migrate のビジネス ケースでは、オンプレミスと Azure の総保有コスト（TCO）やキャッシュ フローを比較できます。Azure 料金計算ツールは、これから作るリソースの月額を見積もるものです。Azure Reservations は、割引を受ける仕組みで、見積もりツールではありません。",
@@ -762,9 +762,9 @@
    "q": "自分が利用している Azure のサービスやリージョンに影響する障害や計画メンテナンスについて、メールなどで通知を受け取るために設定するものはどれですか。",
    "choices": [
     "Service Health アラート",
-    "Azure Advisor のスコア（推奨の実施率）",
-    "リソース ロック（削除や変更の防止）",
-    "コストの予算アラート（支出の通知）"
+    "Azure Advisor のスコア",
+    "リソース ロック",
+    "コストの予算アラート"
    ],
    "answer": 0,
    "explanation": "Azure Service Health は、利用しているサービスとリージョンに絞って、障害、計画メンテナンス、ヘルス アドバイザリを通知します。Service Health アラートを設定すると、好みの通知方法で受け取れます。障害そのものを防ぐ機能ではありません。",
@@ -789,10 +789,10 @@
   {
    "q": "管理者が仮想マシンを停止した、といった Azure の操作の記録（アクティビティ ログ）をもとに、自動でアラートを発生させるために使うサービスはどれですか。",
    "choices": [
-    "Microsoft Defender for Cloud（脅威の検出）",
-    "Azure Service Health（サービスの障害の通知）",
-    "Azure Advisor（推奨事項の提示）",
-    "Azure Monitor（ログの収集とアラート）"
+    "Microsoft Defender for Cloud",
+    "Azure Service Health",
+    "Azure Advisor",
+    "Azure Monitor"
    ],
    "answer": 3,
    "explanation": "Azure のリソースに対する操作は、アクティビティ ログに記録されます。Azure Monitor のアクティビティ ログ アラートを使うと、再起動、停止、リソースの作成や削除といった特定のイベントをトリガーに、アラートを発生させられます。Service Health は、Azure のサービス自体の障害やメンテナンスを通知します。",
